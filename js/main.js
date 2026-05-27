@@ -1,211 +1,289 @@
+/* EFORAS — main.js
+   Mega-menu, mobile nav, privacy modal, contact form qualifié 18 types,
+   newsletter, footer year, smooth interactions.
+*/
 (() => {
-  const menuButton = document.querySelector(".mobile-menu");
-  const desktopNav = document.querySelector(".desktop-nav");
-  const header = document.querySelector(".site-header");
-  const categoryGrid = document.querySelector(".category-grid");
-  const activeHero = document.querySelector(".active-hero");
+  "use strict";
 
-  const columns = [
-    { title: "Web Hosting", color: "#0bb43f", items: [["Linux Shared Hosting", "hosting.html"], ["VPS Hosting", "vps.html"], ["Managed VPS Hosting", "hosting.html"], ["WordPress Hosting", "hosting.html"], ["Email Only Hosting", "hosting.html"], ["Register / Park Domain", "hosting.html"]] },
-    { title: "Home Internet", color: "#ff7b00", items: [["MTN Home Internet", "home-internet.html"], ["Vodacom Home Internet", "home-internet.html"], ["Telkom Home Internet", "home-internet.html"], ["5G Devices", "shop.html"]] },
-    { title: "Home Fibre", color: "#850078", items: [["Monthly Fibre", "fibre.html"], ["Prepaid Fibre", "fibre.html"], ["Fibre Routers", "shop.html"]] },
-    { title: "Mobile Data", color: "#ff641f", items: [["MTN Capped", "mobile-data.html"], ["Telkom Capped", "mobile-data.html"], ["Telkom Uncapped", "mobile-data.html"], ["Mobile Devices", "shop.html"]] },
-    { title: "Internet Calling", color: "#f0f64b", ink: "#343a18", items: [["CallTime", "calling.html"], ["Handsets", "calling.html"], ["Voice App", "calling.html"]] },
-    { title: "Online Shop", color: "#7f807d", items: [["5G", "shop.html"], ["Fibre", "shop.html"], ["LTE", "shop.html"], ["VoIP", "calling.html"], ["Back-up Power", "shop.html"], ["Range Extenders", "shop.html"]] }
-  ];
-
-  const companyColumns = [
-    { title: "Company", color: "#0b74a6", items: [["About Us", "about-us.html"], ["Business Partner", "business-partner.html"], ["Careers", "careers.html"], ["Contact", "contact.html"]] },
-    { title: "Support", color: "#ff641f", items: [["Terms & Conditions", "docs.html"], ["Help & Support", "contact.html"], ["Moving House", "contact.html"]] },
-    { title: "Popular Services", color: "#850078", items: [["VPS Hosting", "vps.html"], ["Home Fibre", "fibre.html"], ["Mobile Data", "mobile-data.html"]] }
-  ];
-
-  const serviceData = {
-    hosting: {
-      title: "Web Hosting",
-      pill: "Secure & Reliable",
-      description: "Explore web hosting packages designed to host, publish and manage files for one or multiple websites.",
-      color: "#009325",
-      tint: "rgba(0,147,37,.78)",
-      accent: "#007b1f",
-      image: "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=80')",
-      position: "40% 28%",
-      promoA: "rgba(0,147,37,.9)",
-      promoB: "rgba(0,110,32,.9)",
-      promoTitle: "Free domains",
-      promoText: "Selected hosting services",
-      needs: [["Fast Web", "screen"], ["Security", "shield"], ["No Contracts", "edit"]],
-      cards: [
-        ["Linux Shared Hosting", "Reliable shared hosting for local needs", "#049444", "server"],
-        ["VPS Hosting", "Powerful servers for growing websites", "#05bd62", "plug"],
-        ["Managed VPS Hosting", "Stress-free hosting managed by EFORAS", "#08c56e", "check"],
-        ["WordPress Hosting", "Turbocharged web hosting for WordPress", "#07935c", "globe"]
+  // ============================================================
+  // MEGA-MENU DATA
+  // ============================================================
+  const servicesColumns = [
+    {
+      title: "Cabinet d'études",
+      color: "#1F3864",
+      items: [
+        ["Études B2B", "cabinet-etudes.html"],
+        ["Santé publique / DHIS2", "cabinet-etudes.html"],
+        ["Évaluations OECD-DAC", "cabinet-etudes.html"]
       ]
     },
-    internet: {
-      title: "Home Internet",
-      pill: "Super-fast Uncapped 5G/LTE",
-      description: "Home internet packages for streaming, work and everyday browsing, with quick address checks.",
-      color: "#f25b09",
-      tint: "rgba(252,101,0,.8)",
-      accent: "#f25b09",
-      image: "url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80')",
-      position: "22% 15%",
-      promoA: "rgba(255,255,255,.92)",
-      promoB: "rgba(255,228,200,.92)",
-      promoTitle: "Free-to-use 5G router",
-      promoText: "On selected home internet packages",
-      needs: [["Coverage Check", "pin"], ["5G/LTE Router", "wifi"], ["EFORAS Data", "sim"]],
-      cards: [
-        ["MTN Home Internet", "Reliable uncapped 5G/LTE internet", "#e76500", "wifi"],
-        ["Vodacom Home Internet", "Uncapped 5G/LTE with fast speeds", "#ff7900", "wifi"],
-        ["Telkom Home Internet", "Affordable LTE connectivity", "#728879", "router"],
-        ["5G Devices", "High-performance devices for 5G", "#a36d3c", "device"]
+    {
+      title: "Sondages d'opinion",
+      color: "#00A6A6",
+      items: [
+        ["Sondages politiques", "sondages.html"],
+        ["Baromètres d'abonnement", "sondages.html"],
+        ["Baromètre démocratique", "etudes.html"],
+        ["Sondages flash", "sondages.html"]
       ]
     },
-    fibre: {
-      title: "Home Fibre",
-      pill: "Ultra-fast Fibre Internet",
-      description: "Fibre-to-the-home provides super-fast broadband connectivity. Check availability and get connected.",
-      color: "#660066",
-      tint: "rgba(155,0,155,.78)",
-      accent: "#660066",
-      image: "url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1600&q=80')",
-      position: "65% 30%",
-      promoA: "rgba(102,18,101,.9)",
-      promoB: "rgba(72,8,75,.9)",
-      promoTitle: "EFORAS Fibre",
-      promoText: "Free installation / unshaped / unthrottled",
-      needs: [["Fibre Line", "fibre"], ["Fibre Router", "router"], ["Active Service", "sim"]],
-      cards: [
-        ["Monthly Fibre", "Unlimited monthly fibre with no data limits", "rgba(60,16,70,.78)", "home"],
-        ["Prepaid Fibre", "Uncapped fibre with flexible payments", "rgba(90,0,85,.78)", "home"],
-        ["Routers", "Get your router from EFORAS and save", "rgba(100,0,100,.72)", "router"]
+    {
+      title: "Académie EFORAS",
+      color: "#D4A017",
+      ink: "#142847",
+      items: [
+        ["Sessions courtes", "academie.html"],
+        ["Parcours certifiants", "academie.html"],
+        ["Intra-entreprise", "academie.html"]
       ]
     },
-    mobile: {
-      title: "Mobile Data",
-      pill: "Connect on-the-go",
-      description: "Mobile services offer a quick and easy way to get connected outside home coverage or as a reliable backup connection.",
-      color: "#f25b09",
-      tint: "rgba(245,88,0,.82)",
-      accent: "#f25b09",
-      image: "url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1600&q=80')",
-      position: "48% 20%",
-      promoA: "rgba(255,70,18,.92)",
-      promoB: "rgba(247,148,29,.92)",
-      promoTitle: "Discounted MiFi router",
-      promoText: "With selected capped data orders",
-      needs: [["Smart Device", "device"], ["Mobile Router", "wifi"], ["EFORAS Mobile Data", "sim"]],
-      cards: [
-        ["MTN Capped",      "Get 3G/4G data on-the-go",              "rgba(238,90,0,.82)",   "sim"],
-        ["Telkom Capped",   "Get LTE data on-the-go",                "rgba(255,108,18,.82)", "sim"],
-        ["Telkom Uncapped", "Go unlimited and take your WiFi with you","rgba(230,75,5,.82)",   "wifi"],
-        ["Mobile Devices",  "Portable devices for your SIM",          "rgba(250,120,30,.82)", "router"]
+    {
+      title: "ML / IA appliquée",
+      color: "#142847",
+      items: [
+        ["Banque & financier", "ml-ia.html"],
+        ["Télécoms", "ml-ia.html"],
+        ["Mines & industrie", "ml-ia.html"],
+        ["Santé & bailleurs", "ml-ia.html"]
       ]
     },
-    calling: {
-      title: "Internet Calling",
-      pill: "Crystal-clear VoIP",
-      description: "Make affordable calls over the internet with calltime, handsets and the EFORAS voice app.",
-      color: "#f4ff45",
-      tint: "rgba(220,230,25,.78)",
-      accent: "#444",
-      image: "url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80')",
-      position: "42% 0",
-      promoA: "rgba(200,221,81,.86)",
-      promoB: "rgba(139,179,108,.86)",
-      promoTitle: "Voice made easy",
-      promoText: "Numbers, devices and call bundles",
-      needs: [["Calltime", "phone"], ["Handsets", "device"], ["Voice App", "globe"]],
-      cards: [
-        ["Calltime", "Purchase your VoIP calltime here", "rgba(91,165,150,.78)", "phone"],
-        ["Handsets", "Wired and wireless VoIP handsets", "rgba(145,182,111,.78)", "device"],
-        ["Voice App", "Get the EFORAS Voice App", "rgba(142,180,109,.78)", "globe"]
+    {
+      title: "EFORAS Tech",
+      color: "#008080",
+      items: [
+        ["Odoo", "eforas-tech.html"],
+        ["Dolibarr", "eforas-tech.html"],
+        ["ERPNext", "eforas-tech.html"],
+        ["Hébergement souverain", "eforas-tech.html"]
       ]
     },
-    shop: {
-      title: "Online Shop",
-      pill: "Click. Shop. Connect.",
-      description: "Connectivity and networking devices for home, office and on-the-go.",
-      color: "#555",
-      tint: "rgba(80,80,80,.78)",
-      accent: "#444",
-      image: "url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1600&q=80')",
-      position: "60% 20%",
-      promoA: "rgba(78,78,78,.9)",
-      promoB: "rgba(110,110,110,.9)",
-      promoTitle: "EFORAS Shop",
-      promoText: "Devices configured for our network",
-      needs: [["Routers", "router"], ["Range Extenders", "wifi"], ["Backup Power", "device"]],
-      cards: [
-        ["5G Routers", "Next-gen network connectivity", "rgba(49,87,102,.82)", "router"],
-        ["Fibre Routers", "Optimised for high-speed fibre", "rgba(36,116,146,.82)", "router"],
-        ["VoIP Devices", "Calls over the internet", "rgba(49,87,102,.82)", "phone"],
-        ["Range Extenders", "Boost your WiFi signal", "rgba(36,116,146,.82)", "wifi"]
+    {
+      title: "Location",
+      color: "#A87E11",
+      items: [
+        ["Kits enquête (tablettes)", "location.html"],
+        ["Événementiel professionnel", "location.html"]
       ]
     }
-  };
+  ];
 
-  const icons = {
-    screen: '<rect x="4" y="5" width="16" height="12"/><path d="M8 21h8M12 17v4"/>',
-    shield: '<path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6z"/>',
-    edit: '<path d="M4 5h16v14H4z"/><path d="m7 17 10-10"/>',
-    server: '<path d="M4 6h16v12H4z"/><path d="M8 10h8M8 14h6"/>',
-    plug: '<path d="M9 2v6M15 2v6M7 8h10v5a5 5 0 0 1-10 0z"/>',
-    check: '<path d="M4 7h16v10H4z"/><path d="m9 12 2 2 4-5"/>',
-    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
-    pin: '<path d="M12 21s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2"/>',
-    wifi: '<path d="M5 16a7 7 0 0 1 14 0"/><path d="M8 19a4 4 0 0 1 8 0"/><rect x="7" y="17" width="10" height="4" rx="1"/>',
-    sim: '<path d="M7 3h8l2 2v16H7z"/><path d="M10 8h4M10 12h4"/>',
-    router: '<rect x="5" y="11" width="14" height="7" rx="2"/><path d="M7 11l-2-5M17 11l2-5"/>',
-    device: '<rect x="8" y="3" width="8" height="18" rx="2"/><path d="M10 17h4"/>',
-    fibre: '<path d="M12 3C8 7 6 10 6 14a6 6 0 0 0 12 0c0-4-2-7-6-11z"/>',
-    home: '<path d="M4 12 12 4l8 8"/><path d="M7 10v9h10v-9"/>',
-    phone: '<path d="M6 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2"/>'
-  };
+  const institutionalColumns = [
+    {
+      title: "Charte d'indépendance",
+      color: "#2D3748",
+      items: [
+        ["6 articles opposables", "charte-independance.html"],
+        ["Mécanisme de saisine", "charte-independance.html"]
+      ]
+    },
+    {
+      title: "Comité scientifique",
+      color: "#1F3864",
+      items: [
+        ["Composition (7 membres)", "comite-scientifique.html"],
+        ["Règles de fonctionnement", "comite-scientifique.html"],
+        ["Postuler", "contact.html?type=candidature-comite"]
+      ]
+    },
+    {
+      title: "Équipe & valeurs",
+      color: "#00A6A6",
+      items: [
+        ["Le fondateur", "equipe.html"],
+        ["Notre équipe", "equipe.html"],
+        ["Carrières", "contact.html?type=carrieres"]
+      ]
+    },
+    {
+      title: "Études & publications",
+      color: "#D4A017",
+      ink: "#142847",
+      items: [
+        ["Baromètre démocratique", "etudes.html"],
+        ["Méthodologies publiques", "etudes.html"],
+        ["Rapports d'audit", "etudes.html"]
+      ]
+    }
+  ];
 
-  if (!desktopNav || !header) return;
+  // ============================================================
+  // BUILD HEADER MEGA-MENUS
+  // ============================================================
+  const header = document.querySelector(".site-header");
+  const desktopNav = document.querySelector(".desktop-nav");
+  const menuButton = document.querySelector(".mobile-menu");
 
-  function icon(name) {
-    return `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[name] || icons.globe}</svg>`;
+  function buildMegaMenu(id, columns) {
+    const menu = document.createElement("div");
+    menu.className = "mega-menu";
+    menu.id = id;
+    menu.setAttribute("role", "menu");
+    const grid = document.createElement("div");
+    grid.className = "mega-grid";
+    columns.forEach((column) => {
+      const card = document.createElement("div");
+      card.className = "mega-card";
+      card.style.setProperty("--mega-bg", column.color);
+      card.style.setProperty("--mega-ink", column.ink || "#fff");
+      card.innerHTML = `<strong>${column.title}</strong>` +
+        column.items.map(([label, href]) => `<a href="${href}">${label}</a>`).join("");
+      grid.append(card);
+    });
+    menu.append(grid);
+    return menu;
   }
 
-  function initLegalModal() {
-    document.querySelectorAll(".legal").forEach((legal) => {
-      legal.innerHTML = `<a href="docs.html?tab=terms">* T's &amp; C's</a><span>&middot;</span><a href="docs.html?tab=aup">AUP</a><span>&middot;</span><button class="legal-link" type="button" data-privacy-open>Privacy Policy</button>`;
+  function setupMenus() {
+    if (!desktopNav || !header) return;
+
+    const triggers = [...desktopNav.querySelectorAll("[data-menu-trigger]")];
+    triggers.forEach((trigger) => {
+      trigger.setAttribute("aria-haspopup", "true");
+      trigger.setAttribute("aria-expanded", "false");
+      if (!trigger.querySelector(".caret")) {
+        const caret = document.createElement("span");
+        caret.className = "caret";
+        caret.setAttribute("aria-hidden", "true");
+        trigger.appendChild(caret);
+      }
     });
+
+    if (!document.getElementById("services-menu")) {
+      desktopNav.append(buildMegaMenu("services-menu", servicesColumns));
+    }
+    if (!document.getElementById("institutional-menu")) {
+      desktopNav.append(buildMegaMenu("institutional-menu", institutionalColumns));
+    }
+
+    const menus = [...desktopNav.querySelectorAll(".mega-menu")];
+
+    function closeAll() {
+      triggers.forEach((t) => {
+        t.classList.remove("is-active");
+        t.setAttribute("aria-expanded", "false");
+      });
+      menus.forEach((m) => m.classList.remove("is-open"));
+    }
+
+    function openMenu(trigger) {
+      const target = document.getElementById(`${trigger.dataset.menuTrigger}-menu`);
+      if (!target) return;
+      closeAll();
+      trigger.classList.add("is-active");
+      trigger.setAttribute("aria-expanded", "true");
+      target.classList.add("is-open");
+    }
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 1024) openMenu(trigger);
+      });
+      trigger.addEventListener("focus", () => openMenu(trigger));
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        const target = document.getElementById(`${trigger.dataset.menuTrigger}-menu`);
+        if (target?.classList.contains("is-open")) closeAll();
+        else openMenu(trigger);
+      });
+    });
+
+    menus.forEach((m) => m.addEventListener("mouseleave", () => {
+      if (window.innerWidth > 1024) closeAll();
+    }));
+    header.addEventListener("mouseleave", () => {
+      if (window.innerWidth > 1024) closeAll();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!header.contains(event.target)) closeAll();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeAll();
+        if (menuButton?.classList.contains("is-open")) {
+          menuButton.classList.remove("is-open");
+          desktopNav?.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+
+    if (menuButton) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = menuButton.classList.toggle("is-open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        desktopNav?.classList.toggle("is-open", isOpen);
+        if (!isOpen) closeAll();
+      });
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("menu") === "services") {
+      window.setTimeout(() => {
+        const t = triggers.find((x) => x.dataset.menuTrigger === "services");
+        if (t) openMenu(t);
+      }, 200);
+    }
+    if (params.get("menu") === "institutional") {
+      window.setTimeout(() => {
+        const t = triggers.find((x) => x.dataset.menuTrigger === "institutional");
+        if (t) openMenu(t);
+      }, 200);
+    }
+  }
+
+  // ============================================================
+  // PRIVACY MODAL
+  // ============================================================
+  function initPrivacyModal() {
+    const triggers = document.querySelectorAll("[data-privacy-open]");
+    if (!triggers.length) return;
 
     const modal = document.createElement("section");
     modal.className = "privacy-modal";
     modal.hidden = true;
     modal.innerHTML = `
       <div class="privacy-dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
-        <button class="privacy-close" type="button" aria-label="Close privacy policy"></button>
+        <button class="privacy-close" type="button" aria-label="Fermer la politique de confidentialité"></button>
         <aside class="privacy-side">
           <span class="privacy-mark">EF</span>
-          <strong>Privacy<br>Policy</strong>
-          <small>Updated 19 May 2026</small>
+          <strong>Politique de<br>confidentialité</strong>
+          <small>Mise à jour&nbsp;: 1er juin 2026</small>
         </aside>
         <article class="privacy-copy">
-          <h2 id="privacy-title">Privacy Policy</h2>
-          <p>EFORAS respects your privacy and keeps customer information secure, relevant and limited to the services you request.</p>
+          <h2 id="privacy-title">Vos données chez EFORAS</h2>
+          <p>EFORAS respecte votre vie privée. Nous collectons uniquement les données nécessaires pour traiter vos demandes (devis, candidatures, abonnements, saisines). Aucune revente, aucun partage à des fins publicitaires.</p>
           <div class="privacy-grid">
-            <section><h3>Information we collect</h3><p>Contact details, service addresses, support messages, billing references and technical service information needed to activate and support your account.</p></section>
-            <section><h3>How we use it</h3><p>We use your data to provide connectivity, process orders, improve support, send service notices and keep your account protected.</p></section>
-            <section><h3>Your choices</h3><p>You can request corrections, unsubscribe from marketing and ask for account data reviews through EFORAS support.</p></section>
-            <section><h3>Security</h3><p>Access is limited to authorised teams and service partners who need the information to deliver or maintain your services.</p></section>
+            <section>
+              <h3>Données collectées</h3>
+              <p>Coordonnées professionnelles, contenu de votre demande, documents transmis (CV, brief). Conservées 5 ans après dernier contact (3 ans pour les candidatures non retenues).</p>
+            </section>
+            <section>
+              <h3>Utilisation</h3>
+              <p>Exécution précontractuelle ou intérêt légitime pour les demandes B2B. Consentement explicite pour la newsletter, retirable en 1 clic.</p>
+            </section>
+            <section>
+              <h3>Vos droits</h3>
+              <p>Accès, rectification, effacement, opposition, portabilité. Demande à <a href="mailto:donnees-personnelles@eforas.cd">donnees-personnelles@eforas.cd</a>, réponse sous 30 jours.</p>
+            </section>
+            <section>
+              <h3>Sécurité</h3>
+              <p>Chiffrement TLS 1.3, sauvegardes chiffrées, hébergement RDC ou UE selon préférence client. Notification sous 72h en cas d'incident.</p>
+            </section>
+          </div>
+          <div class="privacy-actions">
+            <a class="btn btn-outline" href="mentions-legales.html#confidentialite">Politique complète</a>
+            <a class="btn btn-secondary" href="contact.html?type=autre">Nous contacter</a>
           </div>
         </article>
-      </div>
-    `;
+      </div>`;
     document.body.append(modal);
 
     const close = () => {
       modal.classList.remove("is-open");
-      window.setTimeout(() => {
-        modal.hidden = true;
-      }, 180);
+      window.setTimeout(() => { modal.hidden = true; }, 180);
     };
     const open = () => {
       modal.hidden = false;
@@ -225,174 +303,349 @@
     });
 
     if (new URLSearchParams(window.location.search).get("privacy") === "1") {
-      window.setTimeout(open, 180);
+      window.setTimeout(open, 200);
     }
   }
 
-  initLegalModal();
-
-  function buildMenu(id, menuColumns) {
-    const menu = document.createElement("div");
-    menu.className = "mega-menu";
-    menu.id = id;
-    menu.setAttribute("role", "menu");
-    const grid = document.createElement("div");
-    grid.className = "mega-grid";
-
-    menuColumns.forEach((column) => {
-      const card = document.createElement("div");
-      card.className = "mega-card";
-      card.style.setProperty("--mega-bg", column.color);
-      card.style.setProperty("--mega-ink", column.ink || "#fff");
-      card.innerHTML = `<strong>${column.title}</strong>${column.items.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}`;
-      grid.append(card);
+  // ============================================================
+  // FOOTER YEAR + NEWSLETTER
+  // ============================================================
+  function initFooter() {
+    document.querySelectorAll("[data-current-year]").forEach((el) => {
+      el.textContent = new Date().getFullYear();
     });
-
-    menu.append(grid);
-    return menu;
-  }
-
-  function normalizeNav() {
-    [...desktopNav.querySelectorAll("a")].forEach((link) => {
-      const text = link.textContent.toLowerCase();
-      if (text.includes("purchase")) {
-        link.dataset.menuTrigger = "purchase";
-        link.setAttribute("aria-haspopup", "true");
-        link.setAttribute("aria-expanded", "false");
-      }
-      if (text.includes("company")) {
-        link.dataset.menuTrigger = "company";
-        link.setAttribute("aria-haspopup", "true");
-        link.setAttribute("aria-expanded", "false");
-      }
-      link.classList.add("nav-item");
+    document.querySelectorAll(".footer-newsletter form").forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const email = form.querySelector("input[type='email']")?.value?.trim();
+        if (!email) return;
+        const status = form.querySelector(".newsletter-status") || (() => {
+          const s = document.createElement("small");
+          s.className = "newsletter-status";
+          form.appendChild(s);
+          return s;
+        })();
+        status.textContent = "Merci ! Vous recevrez bientôt la confirmation de votre inscription.";
+        status.style.color = "#E8B92A";
+        form.querySelector("input[type='email']").value = "";
+      });
     });
   }
 
-  normalizeNav();
-  desktopNav.append(buildMenu("purchase-menu", columns), buildMenu("company-menu", companyColumns));
+  // ============================================================
+  // CONTACT FORM — 18 TYPES ADAPTATIVE
+  // ============================================================
+  const demandTypes = {
+    "sondage": {
+      label: "Devis pour un sondage politique ou thématique",
+      icon: "📊",
+      fields: [
+        { name: "sondage_type", label: "Type de sondage", type: "select", required: true,
+          options: ["Politique national", "Politique provincial", "Thématique", "Flash"] },
+        { name: "sondage_sample", label: "Échantillon souhaité", type: "select", required: false,
+          options: ["1 000", "1 500", "2 000", "2 500", "> 2 500", "Je ne sais pas"] },
+        { name: "sondage_provinces", label: "Province(s) ciblée(s)", type: "text", required: true,
+          placeholder: "ex. Kinshasa, Haut-Katanga ou « National »" },
+        { name: "sondage_date", label: "Date de besoin", type: "date", required: false },
+        { name: "sondage_budget", label: "Budget indicatif (USD)", type: "select", required: false,
+          options: ["< 10 k$", "10–25 k$", "25–50 k$", "50–100 k$", "> 100 k$", "Je ne sais pas"] },
+        { name: "sondage_publication", label: "Publication dans un média ?", type: "select", required: false,
+          options: ["Oui", "Non", "Pas décidé"] }
+      ]
+    },
+    "etude-sante": {
+      label: "Devis pour une étude santé / DHIS2",
+      icon: "🔬",
+      fields: [
+        { name: "sante_org", label: "Type d'organisation", type: "select", required: true,
+          options: ["Récipient Principal Fonds Mondial", "Récipient Gavi", "ONG", "Bailleur direct", "Ministère", "Autre"] },
+        { name: "sante_etude", label: "Type d'étude", type: "select", required: true,
+          options: ["Analyse SNIS / DHIS2", "Modélisation épidémiologique", "Évaluation de programme", "Autre"] },
+        { name: "sante_zone", label: "Périmètre géographique", type: "text", required: false,
+          placeholder: "Zones de santé concernées" },
+        { name: "sante_date", label: "Date de besoin", type: "date", required: false },
+        { name: "sante_budget", label: "Budget indicatif (USD)", type: "select", required: false,
+          options: ["< 20 k$", "20–50 k$", "50–150 k$", "> 150 k$", "Je ne sais pas"] }
+      ]
+    },
+    "ml-ia": {
+      label: "Atelier d'idéation ou POC ML/IA",
+      icon: "🧠",
+      fields: [
+        { name: "ml_usecase", label: "Cas d'usage envisagé", type: "select", required: true,
+          options: ["Scoring crédit", "Détection de fraude", "Churn / fidélisation", "Segmentation client", "Prévision de demande", "Maintenance prédictive", "Optimisation supply chain", "Autre"] },
+        { name: "ml_data", label: "Disponibilité des données", type: "select", required: true,
+          options: ["Oui, complètes", "Oui, partielles", "Non disponibles", "À clarifier"] },
+        { name: "ml_volume", label: "Volume de données estimé", type: "select", required: false,
+          options: ["< 100 k lignes", "100 k – 1 M", "1 M – 10 M", "> 10 M", "Je ne sais pas"] },
+        { name: "ml_date", label: "Date de besoin", type: "date", required: false }
+      ]
+    },
+    "etude-b2b": {
+      label: "Étude B2B / marché / image",
+      icon: "📈",
+      fields: [
+        { name: "b2b_type", label: "Type d'étude", type: "select", required: true,
+          options: ["Étude marché", "Satisfaction", "Audience", "Image de marque", "Segmentation", "Parcours client"] },
+        { name: "b2b_cible", label: "Cible étudiée", type: "select", required: true,
+          options: ["B2C consommateurs", "B2B professionnels", "Collaborateurs internes", "Autre"] },
+        { name: "b2b_sample", label: "Échantillon souhaité", type: "text", required: false },
+        { name: "b2b_date", label: "Date de besoin", type: "date", required: false }
+      ]
+    },
+    "academie": {
+      label: "Inscription à une formation Académie",
+      icon: "🎓",
+      fields: [
+        { name: "acad_formation", label: "Formation visée", type: "select", required: true,
+          options: ["Python pour la data science (5j)", "Statistiques appliquées avec R (4j)", "SQL et bases de données (3j)", "Power BI / Tableau (3j)", "Introduction à DHIS2 (4j)", "Modélisation épidémiologique (5j)", "Journalisme-data niveau 1 (3j)", "Certificat Data Scientist Junior (6 mois)", "Certificat Épidémiologiste DHIS2 (4 mois)", "Certificat Journaliste-data (3 mois)", "Liste d'attente — autre"] },
+        { name: "acad_level", label: "Niveau actuel", type: "select", required: false,
+          options: ["Débutant", "Intermédiaire", "Avancé", "Autodidacte"] },
+        { name: "acad_profession", label: "Profession actuelle", type: "text", required: false },
+        { name: "acad_bourse", label: "Demande de bourse ?", type: "select", required: false,
+          options: ["Non", "Oui — étudiant·e", "Oui — demandeur d'emploi", "Oui — journaliste indépendant·e"] }
+      ]
+    },
+    "academie-intra": {
+      label: "Formation intra-entreprise",
+      icon: "🏢",
+      fields: [
+        { name: "intra_theme", label: "Thématique souhaitée", type: "text", required: true },
+        { name: "intra_n", label: "Nombre de participants", type: "number", required: true },
+        { name: "intra_duree", label: "Durée souhaitée (jours)", type: "number", required: false },
+        { name: "intra_lieu", label: "Lieu", type: "select", required: false,
+          options: ["Chez vous", "Chez EFORAS", "En ligne", "Hybride"] },
+        { name: "intra_date", label: "Date envisagée", type: "date", required: false }
+      ]
+    },
+    "abonnement-barometre": {
+      label: "Abonnement au Baromètre démocratique RDC",
+      icon: "📰",
+      fields: [
+        { name: "abo_type", label: "Type d'abonnement", type: "select", required: true,
+          options: ["Synthèse gratuite (newsletter)", "Rapport complet trimestriel", "Rapport complet + fichier de données"] },
+        { name: "abo_engagement", label: "Engagement", type: "select", required: false,
+          options: ["Annuel", "Pluriannuel"] },
+        { name: "abo_users", label: "Nombre d'utilisateurs internes", type: "number", required: false }
+      ]
+    },
+    "eforas-tech": {
+      label: "EFORAS Tech (ERP SaaS)",
+      icon: "🛠️",
+      fields: [
+        { name: "tech_taille", label: "Taille de l'entreprise", type: "select", required: true,
+          options: ["TPE (<10)", "PME (10–50)", "Moyenne (50–250)", "Grande (>250)"] },
+        { name: "tech_actuel", label: "ERP actuel", type: "select", required: false,
+          options: ["Aucun", "Excel", "Sage", "SAP", "Autre", "Je ne sais pas"] },
+        { name: "tech_modules", label: "Modules souhaités", type: "text", required: false,
+          placeholder: "CRM, Ventes, Stocks, Compta, RH, Projets…" },
+        { name: "tech_users", label: "Nombre d'utilisateurs prévus", type: "number", required: false },
+        { name: "tech_date", label: "Date go-live envisagée", type: "date", required: false }
+      ]
+    },
+    "location-enquete": {
+      label: "Location de kit enquête (tablettes)",
+      icon: "📦",
+      fields: [
+        { name: "loc_n", label: "Nombre de tablettes", type: "number", required: true },
+        { name: "loc_duree", label: "Durée de location", type: "text", required: true,
+          placeholder: "ex. 14 jours" },
+        { name: "loc_app", label: "Application préférée", type: "select", required: false,
+          options: ["KoboCollect", "ODK Collect", "SurveyCTO", "Je ne sais pas"] },
+        { name: "loc_date", label: "Date de besoin", type: "date", required: false }
+      ]
+    },
+    "location-evenement": {
+      label: "Location événementiel",
+      icon: "🎤",
+      fields: [
+        { name: "ev_type", label: "Type d'événement", type: "select", required: true,
+          options: ["Mariage", "Corporate", "Cérémonie", "Conférence", "Autre"] },
+        { name: "ev_n", label: "Nombre de personnes attendues", type: "number", required: true },
+        { name: "ev_lieu", label: "Lieu", type: "text", required: true },
+        { name: "ev_date", label: "Date de l'événement", type: "date", required: true },
+        { name: "ev_pack", label: "Pack envisagé", type: "select", required: false,
+          options: ["Basique (50–150 pers.)", "Intermédiaire (150–400)", "Premium (400+)", "Sur mesure"] }
+      ]
+    },
+    "carrieres": {
+      label: "Candidature à un poste EFORAS",
+      icon: "👩‍💼",
+      fields: [
+        { name: "carr_poste", label: "Poste visé", type: "select", required: true,
+          options: ["Lead Sondages & Études", "Lead Santé / DHIS2", "Lead Data Science / ML", "Lead Académie / Formation", "Lead Plateforme techno / BI", "Analyste junior", "Commercial", "Support administratif", "Candidature spontanée"] },
+        { name: "carr_disp", label: "Disponibilité", type: "select", required: false,
+          options: ["Immédiate", "Sous 1 mois", "Sous 3 mois", "Plus tard"] },
+        { name: "carr_pret", label: "Prétentions salariales (USD/mois brut)", type: "text", required: false }
+      ]
+    },
+    "candidature-comite": {
+      label: "Candidature au Comité scientifique externe",
+      icon: "🎓",
+      fields: [
+        { name: "com_profil", label: "Profil visé", type: "select", required: true,
+          options: ["Statisticien académique", "Épidémiologiste / méthodologie quantitative", "Juriste droits humains", "Économiste", "Sociologue", "Spécialiste DHIS2 / données de santé", "Spécialiste data privée"] },
+        { name: "com_refs", label: "Références académiques ou professionnelles (2 minimum)", type: "textarea", required: true }
+      ]
+    },
+    "saisine": {
+      label: "Saisine du Comité scientifique (signalement)",
+      icon: "⚖️",
+      fields: [
+        { name: "sais_etude", label: "Quelle étude / sondage EFORAS ?", type: "text", required: false,
+          placeholder: "Titre ou « préoccupation générale »" },
+        { name: "sais_manquement", label: "Description du manquement allégué", type: "textarea", required: true,
+          placeholder: "Décrivez le manquement à la Charte d'indépendance (500–3000 caractères)" },
+        { name: "sais_anonyme", label: "Souhaitez-vous une protection d'identité ?", type: "select", required: false,
+          options: ["Non", "Oui"] }
+      ]
+    },
+    "partenariat": {
+      label: "Partenariat (académique, bailleur, média)",
+      icon: "🤝",
+      fields: [
+        { name: "part_type", label: "Type de partenariat", type: "select", required: true,
+          options: ["Académique", "Bailleur", "Média", "Technologique", "Autre"] }
+      ]
+    },
+    "presse": {
+      label: "Demande presse",
+      icon: "🎤",
+      fields: [
+        { name: "presse_media", label: "Média", type: "text", required: true },
+        { name: "presse_type", label: "Type de demande", type: "select", required: true,
+          options: ["Interview", "Commentaire", "Accès à un rapport", "Autre"] },
+        { name: "presse_delai", label: "Délai souhaité", type: "select", required: false,
+          options: ["Urgent (<24h)", "Sous 3 jours", "Sous 7 jours", "Pas urgent"] }
+      ]
+    },
+    "blog-invite": {
+      label: "Proposition d'article invité (blog)",
+      icon: "✍️",
+      fields: [
+        { name: "blog_titre", label: "Titre proposé", type: "text", required: true },
+        { name: "blog_cat", label: "Catégorie", type: "select", required: true,
+          options: ["Décryptages data", "Méthodologies", "Académie", "Vie du cabinet"] },
+        { name: "blog_resume", label: "Résumé (200–400 mots)", type: "textarea", required: true }
+      ]
+    },
+    "newsletter": {
+      label: "Inscription newsletter « Insights EFORAS »",
+      icon: "📧",
+      fields: []
+    },
+    "enqueteurs": {
+      label: "Candidature comme enquêteur·trice",
+      icon: "👥",
+      fields: [
+        { name: "enq_prov", label: "Province de résidence", type: "text", required: true },
+        { name: "enq_langues", label: "Langues parlées", type: "text", required: false,
+          placeholder: "ex. français, lingala, swahili" },
+        { name: "enq_exp", label: "Expérience d'enquête", type: "select", required: false,
+          options: ["Aucune", "<1 an", "1–3 ans", "3+ ans"] }
+      ]
+    },
+    "autre": { label: "Autre demande", icon: "💬", fields: [] }
+  };
 
-  const menuPanels = [...desktopNav.querySelectorAll(".mega-menu")];
-  const triggers = [...desktopNav.querySelectorAll("[data-menu-trigger]")];
+  function buildContactForm() {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
 
-  function closeMenus() {
-    triggers.forEach((trigger) => trigger.classList.remove("is-active"));
-    triggers.forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
-    menuPanels.forEach((panel) => panel.classList.remove("is-open"));
-  }
+    const typeSelect = form.querySelector("[name='type']");
+    const specificContainer = form.querySelector(".form-specific");
+    if (!typeSelect || !specificContainer) return;
 
-  function openMenu(trigger) {
-    const target = document.querySelector(`#${trigger.dataset.menuTrigger}-menu`);
-    closeMenus();
-    trigger.classList.add("is-active");
-    trigger.setAttribute("aria-expanded", "true");
-    target?.classList.add("is-open");
-  }
-
-  triggers.forEach((trigger) => {
-    trigger.addEventListener("mouseenter", () => openMenu(trigger));
-    trigger.addEventListener("focus", () => openMenu(trigger));
-    trigger.addEventListener("click", (event) => {
-      event.preventDefault();
-      const target = document.querySelector(`#${trigger.dataset.menuTrigger}-menu`);
-      target?.classList.contains("is-open") ? closeMenus() : openMenu(trigger);
+    Object.entries(demandTypes).forEach(([key, def]) => {
+      const opt = document.createElement("option");
+      opt.value = key;
+      opt.textContent = `${def.icon} ${def.label}`;
+      typeSelect.append(opt);
     });
-  });
 
-  menuPanels.forEach((panel) => panel.addEventListener("mouseleave", closeMenus));
-  header.addEventListener("mouseleave", closeMenus);
+    function renderSpecific(typeKey) {
+      specificContainer.innerHTML = "";
+      const def = demandTypes[typeKey];
+      if (!def || !def.fields.length) return;
 
-  function renderService(key, sourceCard) {
-    const data = serviceData[key];
-    if (!data || !activeHero) return;
+      const wrap = document.createElement("div");
+      wrap.className = "form-specific-fields";
+      wrap.innerHTML = `<h3 style="margin: 18px 0 4px; font-size: 1.05rem; color: var(--eforas-navy);">Détails spécifiques à votre demande</h3>`;
 
-    const rect = sourceCard.getBoundingClientRect();
-    const origin = ((rect.left + rect.width / 2) / Math.max(window.innerWidth, 1)) * 100;
-    activeHero.style.setProperty("--origin-x", `${origin}%`);
-    activeHero.style.setProperty("--active-color", data.color);
-    activeHero.style.setProperty("--active-tint", data.tint);
-    activeHero.style.setProperty("--active-accent", data.accent);
-    activeHero.style.setProperty("--active-image", data.image);
-    activeHero.style.setProperty("--active-position", data.position);
-    activeHero.style.setProperty("--promo-a", data.promoA);
-    activeHero.style.setProperty("--promo-b", data.promoB);
+      def.fields.forEach((f) => {
+        const wrapper = document.createElement("label");
+        if (f.required) wrapper.classList.add("required");
+        wrapper.innerHTML = `<span>${f.label}</span>`;
 
-    activeHero.querySelector(".active-copy h1").textContent = data.title;
-    activeHero.querySelector(".active-pill").textContent = data.pill;
-    activeHero.querySelector(".active-description").textContent = data.description;
-    activeHero.querySelector(".active-promo strong").textContent = data.promoTitle;
-    activeHero.querySelector(".active-promo span").textContent = data.promoText;
-    activeHero.querySelector(".need-list").innerHTML = data.needs
-      .map(([label, iconName]) => `<span class="need-item">${icon(iconName)}${label}</span>`)
-      .join("");
-    activeHero.querySelector(".active-cards").innerHTML = data.cards
-      .map(([title, text, bg, iconName]) => `
-        <article class="active-card" style="--card-bg:${bg};--card-icon:${data.accent}">
-          <h2>${title}</h2>
-          <span class="round-icon">${icon(iconName)}</span>
-          <p>${text}</p>
-        </article>
-      `)
-      .join("");
+        let input;
+        if (f.type === "select") {
+          input = document.createElement("select");
+          input.name = f.name;
+          if (f.required) input.required = true;
+          const placeholder = document.createElement("option");
+          placeholder.value = "";
+          placeholder.textContent = "— choisir —";
+          input.append(placeholder);
+          f.options.forEach((o) => {
+            const opt = document.createElement("option");
+            opt.value = o;
+            opt.textContent = o;
+            input.append(opt);
+          });
+        } else if (f.type === "textarea") {
+          input = document.createElement("textarea");
+          input.name = f.name;
+          if (f.required) input.required = true;
+          if (f.placeholder) input.placeholder = f.placeholder;
+        } else {
+          input = document.createElement("input");
+          input.type = f.type || "text";
+          input.name = f.name;
+          if (f.required) input.required = true;
+          if (f.placeholder) input.placeholder = f.placeholder;
+        }
+        wrapper.append(input);
+        wrap.append(wrapper);
+      });
 
-    document.body.classList.add("service-open");
-    activeHero.hidden = false;
-    activeHero.classList.remove("is-leaving");
-    void activeHero.offsetWidth;
-    activeHero.classList.add("is-entering");
-  }
-
-  function closeService() {
-    if (!activeHero || activeHero.hidden) return;
-    activeHero.classList.remove("is-entering");
-    activeHero.classList.add("is-leaving");
-    document.body.classList.remove("service-open");
-    window.setTimeout(() => {
-      activeHero.hidden = true;
-      activeHero.classList.remove("is-leaving");
-    }, 340);
-  }
-
-  categoryGrid?.querySelectorAll("[data-service]").forEach((card) => {
-    card.addEventListener("click", (event) => {
-      if (event.metaKey || event.ctrlKey || event.shiftKey) return;
-      event.preventDefault();
-      renderService(card.dataset.service, card);
-    });
-  });
-
-  activeHero?.querySelector(".hero-back")?.addEventListener("click", closeService);
-
-  menuButton?.addEventListener("click", () => {
-    const isOpen = menuButton.classList.toggle("is-open");
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-    desktopNav.classList.toggle("is-open", isOpen);
-    if (!isOpen) closeMenus();
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!header.contains(event.target)) closeMenus();
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeService();
-      closeMenus();
-      menuButton?.classList.remove("is-open");
-      desktopNav.classList.remove("is-open");
+      specificContainer.append(wrap);
     }
+
+    typeSelect.addEventListener("change", () => renderSpecific(typeSelect.value));
+
+    const params = new URLSearchParams(window.location.search);
+    const initialType = params.get("type");
+    if (initialType && demandTypes[initialType]) {
+      typeSelect.value = initialType;
+      renderSpecific(initialType);
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const success = form.querySelector(".contact-form-success");
+      if (success) {
+        success.classList.add("is-shown");
+        success.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      form.reset();
+      specificContainer.innerHTML = "";
+    });
+  }
+
+  // ============================================================
+  // INIT
+  // ============================================================
+  document.addEventListener("DOMContentLoaded", () => {
+    setupMenus();
+    initPrivacyModal();
+    initFooter();
+    buildContactForm();
   });
 
-  const params = new URLSearchParams(window.location.search);
-  const requestedService = params.get("open");
-  if (requestedService && serviceData[requestedService]) {
-    const source = categoryGrid?.querySelector(`[data-service="${requestedService}"]`) || document.body;
-    window.setTimeout(() => renderService(requestedService, source), 120);
-  }
-  if (params.get("menu") === "purchase") {
-    window.setTimeout(() => openMenu(triggers.find((trigger) => trigger.dataset.menuTrigger === "purchase") || triggers[0]), 120);
-  }
-  if (params.get("menu") === "company") {
-    window.setTimeout(() => openMenu(triggers.find((trigger) => trigger.dataset.menuTrigger === "company") || triggers[0]), 120);
+  if (document.readyState === "interactive" || document.readyState === "complete") {
+    setupMenus();
+    initPrivacyModal();
+    initFooter();
+    buildContactForm();
   }
 })();

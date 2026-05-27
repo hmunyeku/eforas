@@ -1,135 +1,287 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EFORAS - Internet your way</title>
-    <meta
-      name="description"
-      content="EFORAS template pour services web hosting, internet maison, fibre, mobile data, VoIP et boutique en ligne."
-    />
+    <title>EFORAS — Cabinet d'études, sondages et data en RDC</title>
+    <meta name="description" content="EFORAS est un cabinet congolais indépendant qui livre des études, des sondages d'opinion, des solutions data et IA, et des formations certifiantes. Méthodologie auditée, expertise locale, livrables vérifiables." />
+    <meta property="og:title" content="EFORAS — Cabinet d'études, sondages et data en RDC" />
+    <meta property="og:description" content="Décisions fondées sur des faits vérifiables. Cabinet d'études, sondages, ML/IA, formation. Kinshasa, RDC." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,700;0,800;0,900;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <button class="mobile-menu" type="button" aria-label="Ouvrir le menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <a class="brand" href="#top" aria-label="EFORAS accueil">
-        <span class="brand-globe" aria-hidden="true"></span>
+      <a class="brand" href="index.html" aria-label="EFORAS — Accueil">
+        <span class="brand-mark" aria-hidden="true">EF</span>
         <span class="brand-text">
-          <strong>eforas</strong>
-          <em>Internet your way</em>
+          <strong>EFORAS</strong>
+          <em>Cabinet d'études &amp; data — RDC</em>
         </span>
       </a>
 
       <nav class="desktop-nav" aria-label="Navigation principale">
-        <a href="#purchase">Purchase <span>v</span></a>
-        <a href="#deals"><span class="flame"></span> Hot Deals</a>
-        <a href="#company">Company <span>v</span></a>
-        <a href="#status"><span class="status-dot"></span> Status</a>
+        <button class="nav-item" type="button" data-menu-trigger="services">Services</button>
+        <a class="nav-item" href="a-propos.html">À propos</a>
+        <button class="nav-item" type="button" data-menu-trigger="institutional">Institutionnel</button>
+        <a class="nav-item" href="etudes.html">Études</a>
+        <a class="nav-item" href="academie.html">Académie</a>
+        <a class="nav-item" href="blog.html">Blog</a>
+        <a class="nav-item" href="contact.html">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <a class="cart" href="#cart" aria-label="Panier">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 4h2l2.1 11.2a2 2 0 0 0 2 1.7h7.8a2 2 0 0 0 2-1.5L21 8H6.1" />
-            <circle cx="10" cy="20" r="1.4" />
-            <circle cx="17.5" cy="20" r="1.4" />
-          </svg>
-          <span>0</span>
-        </a>
-        <a class="signin" href="#signin" aria-label="Sign In">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="7" r="4" />
-            <path d="M4 22v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2" />
-          </svg>
-          <span>Sign In</span>
-        </a>
+        <a class="header-cta" href="contact.html">Demander un devis</a>
       </div>
+
+      <button class="mobile-menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </header>
 
+    <section class="notice-bar" aria-label="Annonces EFORAS">
+      <p><span class="notice-icon" aria-hidden="true">📊</span> <strong>Baromètre démocratique RDC trimestriel</strong> — synthèse publique gratuite. <a href="etudes.html">Découvrir →</a></p>
+      <p><span class="notice-icon" aria-hidden="true">🤝</span> Vous souhaitez engager EFORAS&nbsp;? <a href="contact.html">Premier échange sous 48&nbsp;h ouvrées →</a></p>
+    </section>
+
     <main id="top">
-      <section class="notice desktop-notice" aria-label="Raccourcis disponibilite">
-        <p>
-          <span class="notice-icon pin"></span>Need Internet?
-          <a href="#availability">Check what's available</a>
-          in your area.
-        </p>
-        <p>
-          <span class="notice-icon truck"></span>Moving House?
-          <a href="#signin">Sign in</a>
-          if you're an EFORAS client.
-        </p>
+      <section class="home-hero">
+        <h1>Des décisions fondées sur des <span class="accent">faits vérifiables</span>.</h1>
+        <p>EFORAS combine collecte de données, analyse statistique, intelligence artificielle et formation pour aider organisations privées, publiques et de la société civile à comprendre, décider, agir.</p>
       </section>
 
-      <a class="promo mobile-promo" id="deals" href="#fibre">Click here for the 19 900 CFA Fibre Promotion</a>
-
-      <section id="purchase" class="category-grid" aria-label="Categories EFORAS">
-        <a class="category category-hosting" href="hosting.html" data-service="hosting">
-          <span>Web <br />Hosting</span>
+      <section class="category-grid" aria-label="Activités EFORAS">
+        <a class="category category-etudes" href="cabinet-etudes.html">
+          <span>Cabinet<br>d'études</span>
+          <small>Études B2B, santé publique, évaluations de programmes</small>
         </a>
-        <a class="category category-internet" href="home-internet.html" data-service="internet">
-          <span>Home <br />Internet</span>
+        <a class="category category-sondages" href="sondages.html">
+          <span>Sondages<br>d'opinion</span>
+          <small>Sondages politiques, baromètres, sondages flash</small>
         </a>
-        <a class="category category-fibre" href="fibre.html" data-service="fibre">
-          <span>Home <br />Fibre</span>
+        <a class="category category-academie" href="academie.html">
+          <span>Académie<br>EFORAS</span>
+          <small>Formations data, statistique, santé, journalisme-data</small>
         </a>
-        <a class="category category-mobile" href="mobile-data.html" data-service="mobile">
-          <span>Mobile <br />Data</span>
+        <a class="category category-ml-ia" href="ml-ia.html">
+          <span>ML / IA<br>appliquée</span>
+          <small>Cas d'usage à fort impact pour entreprises et bailleurs</small>
         </a>
-        <a class="category category-calling" href="calling.html" data-service="calling">
-          <span>Internet <br />Calling</span>
+        <a class="category category-eforas-tech" href="eforas-tech.html">
+          <span>EFORAS<br>Tech</span>
+          <small>Solutions ERP open-source pour PME et organisations</small>
         </a>
-        <a class="category category-shop" href="shop.html" data-service="shop">
-          <span>Online <br />Shop</span>
+        <a class="category category-location" href="location.html">
+          <span>Location</span>
+          <small>Kits enquête et matériel événementiel professionnel</small>
+        </a>
+        <a class="category category-charte" href="charte-independance.html">
+          <span>Charte<br>d'indépendance</span>
+          <small>Méthodologie publique • Comité scientifique • Audit annuel</small>
         </a>
       </section>
 
-      <section class="active-hero" aria-live="polite" hidden>
-        <button class="hero-back" type="button" aria-label="Retour aux categories"></button>
-        <div class="active-copy">
-          <h1></h1>
-          <strong class="active-pill"></strong>
-          <p class="active-description"></p>
+      <section class="page-content section-alt">
+        <div class="page-content-inner">
+          <div style="text-align:center;max-width:720px;margin:0 auto 8px;">
+            <h2 style="margin-top:0;">Trois engagements qui structurent notre travail</h2>
+            <p>EFORAS s'engage publiquement sur la rigueur méthodologique, l'expertise data avancée et l'ancrage local fort.</p>
+          </div>
+          <div class="pillar-grid">
+            <article class="pillar">
+              <span class="pillar-icon" aria-hidden="true">🛡</span>
+              <h3>Méthodologie publique et auditée</h3>
+              <p>Méthodologies génériques publiées. Comité scientifique externe avant chaque sondage politique. Audit méthodologique annuel public.</p>
+              <a class="card-link" href="charte-independance.html">Lire la Charte</a>
+            </article>
+            <article class="pillar">
+              <span class="pillar-icon" aria-hidden="true">🏥</span>
+              <h3>Expertise data et santé publique</h3>
+              <p>Standards d'enquête internationaux, outils data avancés (Python, R, SQL, MLOps), écosystèmes santé publique (DHIS2, SNIS). Analyses livrées avec le code.</p>
+              <a class="card-link" href="cabinet-etudes.html">Nos services</a>
+            </article>
+            <article class="pillar">
+              <span class="pillar-icon" aria-hidden="true">🇨🇩</span>
+              <h3>Ancrage local fort</h3>
+              <p>Cabinet congolais, basé à Kinshasa, qui forme et emploie des profils RDC. Français, lingala, swahili, ciluba, kikongo selon les zones d'intervention.</p>
+              <a class="card-link" href="a-propos.html">Notre approche</a>
+            </article>
+          </div>
         </div>
-        <div class="active-needs">
-          <p>To get connected, you'll need:</p>
-          <div class="need-list"></div>
+      </section>
+
+      <section class="page-content">
+        <div class="page-content-inner">
+          <div style="text-align:center;max-width:720px;margin:0 auto 8px;">
+            <h2 style="margin-top:0;">EFORAS travaille avec…</h2>
+            <p>Médias, bailleurs, entreprises, institutions, cadres et apprenants.</p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">📰</span>
+              <h3>Médias et journalistes</h3>
+              <p>Sondages politiques publiables, baromètres récurrents, données vérifiables pour vos enquêtes.</p>
+              <a class="card-link" href="sondages.html">Sondages d'opinion</a>
+            </article>
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">🏥</span>
+              <h3>Bailleurs santé et ONG</h3>
+              <p>Études et évaluations sur le SNIS-DHIS2, analyses épidémiologiques, suivi de programmes.</p>
+              <a class="card-link" href="cabinet-etudes.html">Cabinet d'études</a>
+            </article>
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">🏦</span>
+              <h3>Entreprises et institutions</h3>
+              <p>Études de marché, cas d'usage ML/IA, formation des équipes, plateforme de gestion.</p>
+              <a class="card-link" href="ml-ia.html">ML / IA appliquée</a>
+            </article>
+            <article class="card">
+              <span class="card-icon" aria-hidden="true">🎓</span>
+              <h3>Cadres et apprenants</h3>
+              <p>Formations courtes et certifiantes en data science, santé publique numérique, journalisme-data.</p>
+              <a class="card-link" href="academie.html">Académie EFORAS</a>
+            </article>
+          </div>
         </div>
-        <div class="active-promo">
-          <strong></strong>
-          <span></span>
+      </section>
+
+      <section class="page-content section-alt">
+        <div class="page-content-inner">
+          <h2 style="text-align:center;margin-top:0;">Notre approche en 4 piliers</h2>
+          <div class="pillar-grid">
+            <article class="pillar">
+              <span class="pillar-icon" aria-hidden="true">1️⃣</span>
+              <h3>Cadrage rigoureux</h3>
+              <p>Note de cadrage écrite&nbsp;: problématique, hypothèses, méthodologie, livrables, calendrier.</p>
+            </article>
+            <article class="pillar">
+              <span class="pillar-icon" aria-hidden="true">2️⃣</span>
+              <h3>Standards reconnus</h3>
+              <p>Échantillonnage probabiliste documenté, pilotes systématiques, supervision terrain quotidienne, méthodes AAPOR / ESOMAR / OECD-DAC / ISO&nbsp;20252.</p>
+            </article>
+            <article class="pillar">
+              <span class="pillar-icon" aria-hidden="true">3️⃣</span>
+              <h3>Code et données reproductibles</h3>
+              <p>Analyses produites en code versionné, accompagnées d'un manifeste d'environnement, prêtes à reproduction par un tiers.</p>
+            </article>
+            <article class="pillar">
+              <span class="pillar-icon" aria-hidden="true">4️⃣</span>
+              <h3>Pair-review et transparence</h3>
+              <p>Revue interne d'un second analyste, revue méthodologique externe pour les missions sensibles, livrables incluant la méthodologie complète.</p>
+            </article>
+          </div>
         </div>
-        <div class="active-cards"></div>
+      </section>
+
+      <section class="page-content">
+        <div class="page-content-inner">
+          <div style="text-align:center;max-width:720px;margin:0 auto 8px;">
+            <h2 style="margin-top:0;">Alignement Objectifs de Développement Durable</h2>
+            <p>EFORAS contribue à plusieurs ODD au travers de ses missions et de ses engagements d'impact.</p>
+          </div>
+          <div class="odd-grid">
+            <div class="odd-card"><span class="odd-icon">🏥</span><strong>ODD 3</strong><span>Santé et bien-être</span></div>
+            <div class="odd-card"><span class="odd-icon">🎓</span><strong>ODD 4</strong><span>Éducation de qualité</span></div>
+            <div class="odd-card"><span class="odd-icon">💼</span><strong>ODD 8</strong><span>Travail décent</span></div>
+            <div class="odd-card"><span class="odd-icon">🔬</span><strong>ODD 9</strong><span>Innovation</span></div>
+            <div class="odd-card"><span class="odd-icon">⚖️</span><strong>ODD 16</strong><span>Institutions efficaces</span></div>
+            <div class="odd-card"><span class="odd-icon">🤝</span><strong>ODD 17</strong><span>Partenariats</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <h2>Prêt à engager EFORAS&nbsp;?</h2>
+        <p>Décrivez votre besoin via notre formulaire qualifié. Premier échange sous <strong>48 heures ouvrées</strong>.</p>
+        <div class="cta-band-actions">
+          <a class="btn btn-primary btn-lg" href="contact.html">Demander un brief</a>
+          <a class="btn btn-outline-white btn-lg" href="charte-independance.html">Lire la Charte d'indépendance</a>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="isp-logo">ISP</div>
-      <p>&copy; 2026 EFORAS. All rights reserved.</p>
-      <a href="#support">Help &amp; Support</a>
-      <nav aria-label="Social links">
-        <a href="#facebook">f</a>
-        <a href="#x">X</a>
-        <a href="#instagram">ig</a>
-        <a href="#youtube">yt</a>
-        <a href="#linkedin">in</a>
-        <a href="#whatsapp">wa</a>
-      </nav>
-      <p class="legal">* T's &amp; C's &middot; AUP &middot; Privacy Policy</p>
+      <div class="footer-grid">
+        <div class="footer-block">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EF</span>
+            <strong>EFORAS</strong>
+          </div>
+          <p>Cabinet d'études, sondages et data — Kinshasa, RDC. Méthodologie auditée, expertise locale, livrables vérifiables.</p>
+          <address>
+            EFORAS SARL<br>
+            Kinshasa, République Démocratique du Congo<br>
+            <a href="mailto:contact@eforas.cd">contact@eforas.cd</a>
+          </address>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.78v2.18h.07c.67-1.27 2.3-2.6 4.74-2.6 5.07 0 6 3.34 6 7.68V24h-5v-7.43c0-1.77-.03-4.05-2.47-4.05-2.47 0-2.85 1.93-2.85 3.93V24h-5V8z"/></svg></a>
+            <a href="#" aria-label="X (Twitter)" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="#" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="cabinet-etudes.html">Cabinet d'études</a></li>
+            <li><a href="sondages.html">Sondages d'opinion</a></li>
+            <li><a href="academie.html">Académie EFORAS</a></li>
+            <li><a href="ml-ia.html">ML / IA appliquée</a></li>
+            <li><a href="eforas-tech.html">EFORAS Tech</a></li>
+            <li><a href="location.html">Location</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-block">
+          <h4>Institutionnel</h4>
+          <ul>
+            <li><a href="a-propos.html">À propos d'EFORAS</a></li>
+            <li><a href="charte-independance.html">Charte d'indépendance</a></li>
+            <li><a href="comite-scientifique.html">Comité scientifique</a></li>
+            <li><a href="equipe.html">Équipe &amp; valeurs</a></li>
+            <li><a href="etudes.html">Études publiées</a></li>
+            <li><a href="blog.html">Blog &amp; actualités</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-block">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">Formulaire qualifié</a></li>
+            <li><a href="contact.html?type=carrieres">Carrières</a></li>
+            <li><a href="contact.html?type=candidature-comite">Comité scientifique</a></li>
+            <li><a href="contact.html?type=saisine">Saisir le Comité</a></li>
+            <li><a href="contact.html?type=presse">Presse</a></li>
+            <li><a href="contact.html?type=partenariat">Partenariats</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-block footer-newsletter">
+          <h4>Newsletter « Insights EFORAS »</h4>
+          <p>Recevez les baromètres trimestriels, les analyses méthodologiques et les actualités d'EFORAS.</p>
+          <form>
+            <input type="email" name="email" placeholder="votre.email@organisation.cd" required />
+            <button type="submit">S'inscrire</button>
+            <small>Pas de publicité externe. Désinscription en 1 clic.</small>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <small>© <span data-current-year>2026</span> EFORAS SARL — Kinshasa, RDC. Tous droits réservés.</small>
+        <nav aria-label="Liens légaux">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <button class="legal-link" type="button" data-privacy-open>Politique de confidentialité</button>
+          <a href="charte-independance.html">Charte d'indépendance</a>
+        </nav>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
   </body>
 </html>
-
-
-
