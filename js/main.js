@@ -171,6 +171,66 @@
     return `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[name] || icons.globe}</svg>`;
   }
 
+  function initLegalModal() {
+    document.querySelectorAll(".legal").forEach((legal) => {
+      legal.innerHTML = `<a href="docs.html?tab=terms">* T's &amp; C's</a><span>&middot;</span><a href="docs.html?tab=aup">AUP</a><span>&middot;</span><button class="legal-link" type="button" data-privacy-open>Privacy Policy</button>`;
+    });
+
+    const modal = document.createElement("section");
+    modal.className = "privacy-modal";
+    modal.hidden = true;
+    modal.innerHTML = `
+      <div class="privacy-dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+        <button class="privacy-close" type="button" aria-label="Close privacy policy"></button>
+        <aside class="privacy-side">
+          <span class="privacy-mark">EF</span>
+          <strong>Privacy<br>Policy</strong>
+          <small>Updated 19 May 2026</small>
+        </aside>
+        <article class="privacy-copy">
+          <h2 id="privacy-title">Privacy Policy</h2>
+          <p>EFORAS respects your privacy and keeps customer information secure, relevant and limited to the services you request.</p>
+          <div class="privacy-grid">
+            <section><h3>Information we collect</h3><p>Contact details, service addresses, support messages, billing references and technical service information needed to activate and support your account.</p></section>
+            <section><h3>How we use it</h3><p>We use your data to provide connectivity, process orders, improve support, send service notices and keep your account protected.</p></section>
+            <section><h3>Your choices</h3><p>You can request corrections, unsubscribe from marketing and ask for account data reviews through EFORAS support.</p></section>
+            <section><h3>Security</h3><p>Access is limited to authorised teams and service partners who need the information to deliver or maintain your services.</p></section>
+          </div>
+        </article>
+      </div>
+    `;
+    document.body.append(modal);
+
+    const close = () => {
+      modal.classList.remove("is-open");
+      window.setTimeout(() => {
+        modal.hidden = true;
+      }, 180);
+    };
+    const open = () => {
+      modal.hidden = false;
+      void modal.offsetWidth;
+      modal.classList.add("is-open");
+      modal.querySelector(".privacy-close")?.focus();
+    };
+
+    document.addEventListener("click", (event) => {
+      if (event.target.closest("[data-privacy-open]")) open();
+    });
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal || event.target.closest(".privacy-close")) close();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !modal.hidden) close();
+    });
+
+    if (new URLSearchParams(window.location.search).get("privacy") === "1") {
+      window.setTimeout(open, 180);
+    }
+  }
+
+  initLegalModal();
+
   function buildMenu(id, menuColumns) {
     const menu = document.createElement("div");
     menu.className = "mega-menu";

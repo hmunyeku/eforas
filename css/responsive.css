@@ -176,6 +176,29 @@
     display: none;
   }
 
+  .privacy-modal {
+    align-items: start;
+    padding: 16px;
+    overflow: auto;
+  }
+
+  .privacy-dialog {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-side {
+    min-height: 210px;
+    padding: 28px;
+  }
+
+  .privacy-copy {
+    padding: 32px 22px 24px;
+  }
+
+  .privacy-grid {
+    grid-template-columns: 1fr;
+  }
+
   .service-main {
     grid-template-columns: 1fr;
     min-height: 0;

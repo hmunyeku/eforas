@@ -465,3 +465,189 @@
 .legal {
   font-weight: 400;
 }
+
+.legal {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legal a,
+.legal-link {
+  border: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  transition: opacity var(--fast);
+}
+
+.legal a:hover,
+.legal-link:hover {
+  opacity: .78;
+}
+
+.legal-link:focus-visible {
+  outline: 2px solid rgba(255,255,255,.8);
+  outline-offset: 3px;
+}
+
+.privacy-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 45, 68, .62);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.privacy-modal[hidden] {
+  display: none;
+}
+
+.privacy-modal.is-open {
+  opacity: 1;
+}
+
+.privacy-dialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: 265px minmax(0, 1fr);
+  overflow: hidden;
+  width: min(920px, 100%);
+  border-radius: 18px;
+  background: #f4f4f4;
+  box-shadow: 0 28px 70px rgba(0,0,0,.38);
+  color: #4f4f4f;
+  transform: translateY(18px) scale(.98);
+  transition: transform 220ms cubic-bezier(.16,.9,.22,1);
+}
+
+.privacy-modal.is-open .privacy-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.privacy-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(20,136,189,.12);
+  cursor: pointer;
+  transition: background var(--fast), transform var(--fast);
+}
+
+.privacy-close:hover {
+  background: rgba(20,136,189,.2);
+  transform: rotate(90deg);
+}
+
+.privacy-close:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.privacy-close::before,
+.privacy-close::after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 19px;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--blue-deep);
+}
+
+.privacy-close::before { transform: rotate(45deg); }
+.privacy-close::after { transform: rotate(-45deg); }
+
+.privacy-side {
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  min-height: 520px;
+  padding: 34px;
+  color: white;
+  background:
+    linear-gradient(rgba(14,126,178,.88), rgba(14,126,178,.72)),
+    url("https://www.axxess.co.za/img/docs-bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.privacy-mark {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  border: 3px solid rgba(255,255,255,.8);
+  border-radius: 50%;
+  background: var(--orange);
+  font-weight: 900;
+}
+
+.privacy-side strong {
+  font-family: "Courier New", monospace;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.privacy-side small {
+  font-weight: 700;
+}
+
+.privacy-copy {
+  padding: 46px 48px 40px;
+}
+
+.privacy-copy h2 {
+  margin: 0 0 16px;
+  color: var(--blue-deep);
+  font-family: "Courier New", monospace;
+  font-size: 2rem;
+}
+
+.privacy-copy > p {
+  max-width: 620px;
+  margin: 0 0 24px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.privacy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.privacy-grid section {
+  min-height: 150px;
+  padding: 18px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 1px 8px rgba(0,0,0,.12);
+}
+
+.privacy-grid h3 {
+  margin: 0 0 10px;
+  color: #4f4f4f;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.privacy-grid p {
+  margin: 0;
+  font-size: .9rem;
+  line-height: 1.45;
+}
