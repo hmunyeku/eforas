@@ -1,0 +1,244 @@
+@media (max-width: 980px) {
+  .site-header {
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    height: 72px;
+    padding: 0 10px;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .brand-text strong {
+    font-size: 2.5rem;
+  }
+
+  .brand-text em {
+    font-size: .92rem;
+  }
+
+  .brand-globe {
+    width: 39px;
+    height: 39px;
+  }
+
+  .desktop-nav,
+  .signin span,
+  .desktop-notice {
+    display: none;
+  }
+
+  .desktop-nav.is-open {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    display: grid;
+    gap: 0;
+    padding: 8px 26px 14px;
+    background: var(--blue-deep);
+    animation: menuDrop var(--smooth);
+  }
+
+  .desktop-nav.is-open .nav-item {
+    min-height: 42px;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(255,255,255,.22);
+  }
+
+  .mega-menu {
+    position: static;
+    display: none;
+    width: 100%;
+    padding: 8px 0 12px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .mega-menu.is-open {
+    display: block;
+  }
+
+  .mega-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mega-card {
+    min-height: auto;
+  }
+
+  .header-actions {
+    gap: 12px;
+  }
+
+  .signin svg,
+  .cart svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .mobile-promo {
+    display: block;
+    width: calc(100% - 52px);
+    margin-left: 26px;
+    padding: 10px 14px;
+    border-radius: 0 0 14px 14px;
+    color: white;
+    background: var(--pink);
+    text-align: center;
+    font-size: .93rem;
+    font-weight: 900;
+  }
+
+  .category-grid {
+    display: flex;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 0 8px 26px;
+  }
+
+  .active-hero {
+    position: relative;
+    inset: auto;
+    min-height: calc(100vh - 72px);
+    margin-left: 26px;
+    border-radius: 0 14px 14px 0;
+  }
+
+  .active-copy,
+  .active-needs,
+  .active-promo,
+  .active-cards {
+    position: relative;
+    inset: auto;
+    width: auto;
+  }
+
+  .active-copy {
+    padding: 70px 22px 20px;
+  }
+
+  .active-copy h1 {
+    font-size: clamp(2.6rem, 13vw, 4rem);
+  }
+
+  .active-needs {
+    padding: 24px 22px;
+  }
+
+  .need-list,
+  .active-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .active-promo {
+    width: auto;
+    min-height: 130px;
+    margin: 10px;
+    padding: 24px;
+  }
+
+  .active-cards {
+    padding: 10px;
+  }
+
+  .active-card {
+    min-height: 150px;
+  }
+
+  .category {
+    min-height: 122px;
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 0 14px 14px 0;
+    background-position: center;
+  }
+
+  .category span {
+    padding: 0 16px;
+    font-size: clamp(1.8rem, 8vw, 2.25rem);
+    line-height: 1;
+    text-align: center;
+  }
+
+  .category span br {
+    display: none;
+  }
+
+  .site-footer {
+    display: none;
+  }
+
+  .service-main {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 0 0 22px 26px;
+  }
+
+  .service-left {
+    min-height: 0;
+    padding-right: 0;
+  }
+
+  .service-hero {
+    min-height: 300px;
+    margin: 0;
+    padding: 34px 22px;
+    border-radius: 0 0 0 18px;
+  }
+
+  .service-title {
+    font-size: clamp(2.8rem, 13vw, 4.4rem);
+  }
+
+  .service-pill {
+    font-size: 1.25rem;
+  }
+
+  .service-intro {
+    font-size: 1.1rem;
+  }
+
+  .requirements {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px 22px;
+  }
+
+  .promo-card {
+    margin-right: 0;
+    border-radius: 18px 0 0 18px;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+    margin-top: 14px;
+  }
+
+  .service-card {
+    min-height: 148px;
+    border-radius: 18px 0 0 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-text strong {
+    font-size: 2.2rem;
+  }
+
+  .brand-globe {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cart span {
+    font-size: 1.05rem;
+  }
+}

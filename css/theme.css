@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800;1,900&family=Montserrat:ital,wght@1,800&display=swap");
+
+:root {
+  --blue:         #1388bd;
+  --blue-dark:    #0b74a6;
+  --blue-deep:    #0a6f9e;
+  --white:        #ffffff;
+  --orange:       #ff7a22;
+  --orange-deep:  #f25b09;
+  --pink:         #ec0a94;
+  --red:          #ff001b;
+  --shadow:       0 12px 26px rgba(0,0,0,.22);
+  --panel-radius: 18px;
+  --fast:         180ms ease;
+  --smooth:       500ms cubic-bezier(.2,.8,.2,1);
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--white);
+  background: var(--blue);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--white);
+  background: var(--blue);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button { font: inherit; }
+
+svg { display: block; }
+
+@keyframes panelRise {
+  from { opacity: 0; transform: translateY(24px) scale(.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes menuDrop {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
