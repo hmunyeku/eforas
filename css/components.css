@@ -1,20 +1,23 @@
 /* ============================================================
-   HEADER EFORAS — Style Axxess (fond navy plein, brand blanc)
+   HEADER EFORAS — Clone Axxess : navy plein, 72px, brand blanc
    ============================================================ */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 40;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 28px;
-  height: 84px;
+  height: 72px;
   padding: 0 clamp(16px, 5vw, 56px);
   background: var(--eforas-navy);
-  border-bottom: 1px solid var(--eforas-navy-dark);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, .18);
+  border-bottom: 0;
 }
+
+body { padding-top: 72px; }
 
 .brand {
   display: inline-flex;
@@ -124,7 +127,7 @@
    ============================================================ */
 .mega-menu {
   position: absolute;
-  top: 84px;
+  top: 72px;
   left: 0;
   z-index: 35;
   display: none;
