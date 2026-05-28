@@ -190,6 +190,48 @@ body .navbar {
 }
 
 /* ============================================================
+   NOTICE BAR Axxess (#as-link-wrapper + #mh-link-wrapper)
+   Forcer la lisibilité des liens (Réponse sous 48 h / Découvrir)
+   ============================================================ */
+#addresssearch-link-wrapper,
+.ef-notice-row,
+.pin-text {
+  background-color: #0C7AAD !important;
+}
+#as-link-wrapper,
+#mh-link-wrapper {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+#as-link-wrapper *,
+#mh-link-wrapper *,
+#as-link-wrapper strong,
+#mh-link-wrapper strong {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+#as-link-wrapper a,
+#mh-link-wrapper a {
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  opacity: 1 !important;
+}
+#as-link-wrapper a:hover,
+#mh-link-wrapper a:hover {
+  color: #FFE07A !important;
+}
+
+/* Icônes pin / camion à côté */
+#as-link-wrapper .icon-pin,
+#mh-link-wrapper .icon-delivery,
+#mh-link-wrapper .icon-truck {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+/* ============================================================
    6. PRELOADER : forcer la disparition du pacediv Axxess
    (le JS animait un slide-left qui restait coincé sans finalisation)
    ============================================================ */
