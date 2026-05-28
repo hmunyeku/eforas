@@ -1,0 +1,378 @@
+/* ============================================================
+   EFORAS-PAGE OVERRIDES — header/footer Axxess sur pages internes
+   - Charge le chrome Axxess (navbar navy + footer ISP)
+   - Permet le scroll vertical pour le contenu pédagogique
+   - Garde la cascade EFORAS (styles.css) pour le contenu
+   ============================================================ */
+
+:root {
+  --eforas-navy:        #1F3864;
+  --eforas-navy-dark:   #142847;
+  --eforas-navy-light:  #2A4A7F;
+  --eforas-teal:        #00A6A6;
+  --eforas-teal-dark:   #008080;
+  --eforas-gold:        #D4A017;
+  --eforas-gold-dark:   #A87E11;
+  --eforas-gold-light:  #E8B92A;
+}
+
+/* Body : scroll permis (vs home overflow:hidden) */
+html, body, #sudo {
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+body.ef-page {
+  background: #F4F6FA;
+  color: #2d3748;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding-top: 72px; /* compense navbar fixed */
+}
+
+/* ============================================================
+   NAVBAR AXXESS (clone style)
+   ============================================================ */
+.ef-navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1040;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 72px;
+  padding: 0 clamp(14px, 4vw, 40px);
+  background: var(--eforas-navy);
+  color: #fff;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+.ef-navbar .eforas-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 72px;
+  text-decoration: none;
+  color: #fff;
+  flex: 0 0 auto;
+}
+.ef-navbar .eforas-logo:hover { text-decoration: none; }
+.ef-navbar .eforas-logo-mark {
+  width: 52px;
+  height: 52px;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+}
+.ef-navbar .eforas-logo-text {
+  display: inline-grid;
+  line-height: 1;
+  gap: 2px;
+}
+.ef-navbar .eforas-logo-text strong {
+  color: #fff;
+  font-family: "Montserrat", "Roboto", Arial, sans-serif;
+  font-size: 2.05rem;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -.01em;
+  line-height: 1;
+  text-transform: lowercase;
+}
+.ef-navbar .eforas-logo-text em {
+  color: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: .78rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: .04em;
+  line-height: 1;
+  padding-left: 2px;
+  white-space: nowrap;
+}
+
+.ef-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+.ef-nav li { display: inline-flex; }
+.ef-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 72px;
+  padding: 0 14px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background .18s ease;
+}
+.ef-nav a:hover { background: var(--eforas-navy-dark); }
+.ef-nav a.active { background: var(--eforas-navy-dark); }
+.ef-nav .ef-flame {
+  display: inline-block;
+  width: 14px; height: 18px;
+  background: #82d7ff;
+  border-radius: 10px 10px 10px 0;
+  transform: rotate(-24deg);
+}
+.ef-nav .ef-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #FF001B;
+  box-shadow: 0 0 0 2px #fff;
+  animation: efPulse 2.4s infinite;
+}
+@keyframes efPulse {
+  0%,100% { box-shadow: 0 0 0 2px #fff; }
+  50% { box-shadow: 0 0 0 5px rgba(255,0,27,.22), 0 0 0 2px #fff; }
+}
+
+.ef-cta {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--eforas-gold);
+  color: var(--eforas-navy);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: .92rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  transition: background .18s ease, transform .18s ease;
+  flex: 0 0 auto;
+}
+.ef-cta:hover {
+  background: var(--eforas-gold-dark);
+  color: #fff;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Mobile menu burger */
+.ef-burger {
+  display: none;
+  width: 44px; height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #fff;
+}
+.ef-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 6px auto;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform .18s ease, opacity .18s ease;
+}
+.ef-burger.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.ef-burger.is-open span:nth-child(2) { opacity: 0; }
+.ef-burger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+@media (max-width: 1024px) {
+  .ef-burger { display: inline-block; order: -1; }
+  .ef-nav {
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 16px 14px;
+    background: var(--eforas-navy);
+    border-bottom: 1px solid var(--eforas-navy-dark);
+    box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    display: none;
+  }
+  .ef-nav.is-open { display: flex; }
+  .ef-nav a { height: auto; padding: 12px 14px; }
+  .ef-navbar .eforas-logo-text em { display: none; }
+}
+
+/* ============================================================
+   NOTICE BAR (sous header, cyan style Axxess)
+   ============================================================ */
+.ef-notice-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 36px;
+  min-height: 44px;
+  padding: 10px 24px;
+  background: #0C7AAD; /* bleu cyan Axxess pour le contraste avec navbar navy */
+  color: #fff;
+  font-size: .92rem;
+  font-weight: 500;
+}
+.ef-notice-bar a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+.ef-notice-bar a:hover { color: var(--eforas-gold-light); }
+
+/* ============================================================
+   PAGE HERO (sous navbar)
+   ============================================================ */
+.ef-page-hero {
+  position: relative;
+  padding: 64px clamp(16px, 5vw, 64px);
+  background: linear-gradient(135deg, var(--eforas-navy), var(--eforas-navy-light));
+  color: #fff;
+  overflow: hidden;
+}
+.ef-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(0,166,166,.35), transparent 45%),
+    radial-gradient(circle at 95% 100%, rgba(212,160,23,.25), transparent 45%);
+  pointer-events: none;
+}
+.ef-page-hero.is-gold { background: linear-gradient(135deg, var(--eforas-gold-dark), var(--eforas-gold)); color: var(--eforas-navy); }
+.ef-page-hero.is-teal { background: linear-gradient(135deg, var(--eforas-teal-dark), var(--eforas-teal)); }
+.ef-page-hero.is-navy-dark { background: linear-gradient(135deg, #0a172a, var(--eforas-navy)); }
+.ef-page-hero.is-gold-dark { background: linear-gradient(135deg, #6a4f0a, var(--eforas-gold-dark)); }
+.ef-page-hero.is-teal-dark { background: linear-gradient(135deg, #003e3e, var(--eforas-teal-dark)); }
+.ef-page-hero.is-magenta { background: linear-gradient(135deg, #4a0033, #8e1a5e); }
+.ef-page-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ef-page-hero .ef-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: rgba(255,255,255,.75);
+  font-size: .85rem;
+  font-weight: 500;
+}
+.ef-page-hero.is-gold .ef-breadcrumb { color: rgba(31,56,100,.75); }
+.ef-page-hero .ef-breadcrumb a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ef-page-hero h1 {
+  margin: 0 0 14px;
+  font-family: "Montserrat", "Roboto", Arial, sans-serif;
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
+  font-style: italic;
+  font-weight: 900;
+  color: inherit;
+  line-height: 1.05;
+}
+.ef-page-hero .lead {
+  max-width: 760px;
+  margin: 0 auto 24px;
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  line-height: 1.5;
+  font-weight: 500;
+  color: rgba(255,255,255,.92);
+}
+.ef-page-hero.is-gold .lead { color: rgba(31,56,100,.88); }
+.ef-page-hero-actions {
+  display: inline-flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ============================================================
+   FOOTER AXXESS (ISP badge + copyright + social + legal)
+   ============================================================ */
+.ef-footer-axxess {
+  background: #0C7AAD;
+  color: #fff;
+  padding: 24px clamp(14px, 4vw, 40px);
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: .9rem;
+}
+.ef-footer-axxess .ef-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.ef-footer-axxess .ef-isp {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 28px;
+  border: 1.5px solid rgba(255,255,255,.55);
+  border-radius: 5px;
+  color: rgba(255,255,255,.65);
+  font-weight: 800;
+  font-size: .78rem;
+  letter-spacing: .04em;
+}
+.ef-footer-axxess .ef-copy {
+  color: rgba(255,255,255,.86);
+  font-weight: 400;
+}
+.ef-footer-axxess .ef-support {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.ef-footer-axxess .ef-support:hover { color: var(--eforas-gold-light); }
+.ef-footer-axxess .ef-socials {
+  display: inline-flex;
+  gap: 8px;
+}
+.ef-footer-axxess .ef-socials a {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(255,255,255,.8);
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.ef-footer-axxess .ef-socials a:hover {
+  background: rgba(255,255,255,.22);
+  border-color: #fff;
+  transform: translateY(-1px);
+}
+.ef-footer-axxess .ef-socials svg {
+  width: 14px;
+  height: 14px;
+  fill: #fff;
+}
+.ef-footer-axxess .ef-legal {
+  display: inline-flex;
+  gap: 6px 14px;
+  flex-wrap: wrap;
+  font-size: .85rem;
+}
+.ef-footer-axxess .ef-legal a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+}
+.ef-footer-axxess .ef-legal a:hover { color: var(--eforas-gold-light); }
+
+@media (max-width: 1024px) {
+  .ef-footer-axxess .ef-footer-row { justify-content: center; text-align: center; }
+}
