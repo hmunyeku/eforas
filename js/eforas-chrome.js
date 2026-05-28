@@ -29,6 +29,7 @@
   }
 
   function buildHeader() {
+    // Header identique à la home : 4 items nav + Cart + Sign In (style Axxess pur)
     return (
       '<div class="ef-navbar">' +
         '<button class="ef-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">' +
@@ -44,7 +45,16 @@
         '<nav aria-label="Navigation principale">' +
           '<ul class="ef-nav">' + buildNav() + '</ul>' +
         '</nav>' +
-        '<a class="ef-cta" href="contact.html">Demander un devis</a>' +
+        '<div class="ef-nav-actions">' +
+          '<a class="ef-cart-link" href="#" aria-label="Panier (0)">' +
+            '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.1 11.2a2 2 0 0 0 2 1.7h7.8a2 2 0 0 0 2-1.5L21 8H6.1"/><circle cx="10" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></svg>' +
+            '<span class="ef-cart-count">0</span>' +
+          '</a>' +
+          '<a class="ef-signin-link" href="contact.html?type=autre" aria-label="Sign In">' +
+            '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 22v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>' +
+            '<span>Sign In</span>' +
+          '</a>' +
+        '</div>' +
       '</div>' +
       '<section class="ef-notice-bar" aria-label="Annonces EFORAS">' +
         '<p><span aria-hidden="true">📊</span> <strong>Baromètre démocratique RDC</strong> — synthèse publique gratuite. <a href="etudes.html">Découvrir</a></p>' +
