@@ -85,7 +85,7 @@
 	
 	<link rel="preload" href="/css/eforas/ini.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript><link rel="stylesheet" href="/css/eforas/ini.css"></noscript>
-    <link rel="stylesheet" href="/css/eforas-overrides.css">
+    <link rel="stylesheet" href="/css/eforas-overrides.css?v=2">
 </head>
 
 <body id="index">
@@ -1560,51 +1560,85 @@
 
                             <li class="dropdown menu-large">
 
-                                <a href="/" class="dropdown-toggle"> Institutionnel <span class="ef-caret" aria-hidden="true">▾</span></a>
+                                <a href="#" class="dropdown-toggle"> Institutionnel <span class="ef-caret" aria-hidden="true">▾</span></a>
 
-                                <ul class="dropdown-menu megamenu row">
+                                <ul class="dropdown-menu megamenu row ef-mm-institutionnel">
                                     <li class="container">
 
-                                        <div class="col-sm-3">
-                                            <div class="col-sm-12">
-                                                <ul class="company">
-                                                    <li class="dropdown-header"><span>Institutionnel</span></li>
-                                                    <li><a href="a-propos.html" class="link">About Us</a></li>
-                                                    <li><a href="https://help.eforas.co.za/" target="_blank">Support</a></li>
-                                                    <li><a href="contact.html?type=partenariat" class="link">Become a Business Partner</a></li>
-                                                    <li><a href="contact.html?type=carrieres" class="link">Career Opportunities</a></li>
-                                                    <li><a href="contact.html" class="link">Contact Us</a></li>
-                                                </ul>
-                                            </div>
+                                        <!-- Col 1 : Cabinet -->
+                                        <div class="col-sm-3 ef-mm-col">
+                                            <ul class="company">
+                                                <li class="dropdown-header">
+                                                    <span class="ef-mm-icon" aria-hidden="true">🏛</span>
+                                                    <span>Cabinet</span>
+                                                </li>
+                                                <li><a href="a-propos.html" class="link">À propos d'EFORAS</a></li>
+                                                <li><a href="equipe.html" class="link">Direction &amp; équipe</a></li>
+                                                <li><a href="equipe.html#valeurs" class="link">Valeurs &amp; politique RH</a></li>
+                                                <li><a href="equipe.html#gouvernance" class="link">Gouvernance</a></li>
+                                                <li><a href="contact.html?type=carrieres" class="link">Carrières</a></li>
+                                                <li><a href="contact.html?type=enqueteurs" class="link">Réseau d'enquêteurs</a></li>
+                                            </ul>
                                         </div>
 
-                                        <ul class="col-sm-7">
-                                            <li>
-                                                
-<div id="newsletter-container">
-	<div id="newsletter-header">
-		<i class="icon-mail"></i>
-		<h3>Sign up for <span class="bold">EFORAS News!</span></h3>
-	</div>
-	<form id="newsletterSignup" autocomplete="off">
-        <input type="hidden" name="newsletterSignupSubmit" id="newsletterSignupSubmit" value="newsletterSignupSubmit" />
-		<div class="errmsg text-center hide"></div>
-		<div class="form-group">
-			<div class="input-group">
-				<input type="text" class="form-control" name="email" autocomplete="email" placeholder="Enter your email address *" value="" />
-			</div>
-		</div>
-		<button id="btn-news-signup" class="btn btn-eforas" type="submit"><span>SIGN UP</span></button>
-	</form>
-</div>
+                                        <!-- Col 2 : Engagement & Charte -->
+                                        <div class="col-sm-3 ef-mm-col">
+                                            <ul class="company">
+                                                <li class="dropdown-header">
+                                                    <span class="ef-mm-icon" aria-hidden="true">⚖️</span>
+                                                    <span>Engagement</span>
+                                                </li>
+                                                <li><a href="charte-independance.html" class="link"><strong>Charte d'indépendance</strong></a></li>
+                                                <li><a href="charte-independance.html#audit" class="link">Audit méthodologique annuel</a></li>
+                                                <li><a href="charte-independance.html#saisine" class="link">Saisir le Comité</a></li>
+                                                <li><a href="etudes.html#methodologies" class="link">Méthodologies publiques</a></li>
+                                                <li><a href="etudes.html#impact" class="link">Rapport d'impact (IRIS+)</a></li>
+                                                <li><a href="mentions-legales.html#confidentialite" class="link">Données personnelles</a></li>
+                                            </ul>
+                                        </div>
 
-                                            </li>
-                                        </ul>
+                                        <!-- Col 3 : Comité scientifique & Études -->
+                                        <div class="col-sm-3 ef-mm-col">
+                                            <ul class="company">
+                                                <li class="dropdown-header">
+                                                    <span class="ef-mm-icon" aria-hidden="true">🔬</span>
+                                                    <span>Comité &amp; études</span>
+                                                </li>
+                                                <li><a href="comite-scientifique.html" class="link">Comité scientifique externe</a></li>
+                                                <li><a href="comite-scientifique.html#composition" class="link">7 membres indépendants</a></li>
+                                                <li><a href="comite-scientifique.html#decisions" class="link">Décisions publiques</a></li>
+                                                <li><a href="contact.html?type=candidature-comite" class="link">Postuler au Comité</a></li>
+                                                <li><a href="etudes.html" class="link">Études publiées</a></li>
+                                                <li><a href="etudes.html#barometre" class="link">Baromètre démocratique RDC</a></li>
+                                            </ul>
+                                        </div>
 
-                                        <div class="col-sm-2">
-                                            <div class="ispbadge container-lazy" data-img="/img/icon-ispoty-5x.webp">
-                                                <img src="/img/blank.png" class="img-responsive" alt="5x ISP Of The Year" />
+                                        <!-- Col 4 : Newsletter + impact visuel -->
+                                        <div class="col-sm-3 ef-mm-col ef-mm-newsletter">
+                                            <div id="newsletter-container">
+                                                <div id="newsletter-header">
+                                                    <span class="ef-mm-icon" aria-hidden="true">📧</span>
+                                                    <h3>Newsletter <span class="bold">Insights EFORAS</span></h3>
+                                                </div>
+                                                <p class="ef-mm-newsletter-pitch">Baromètres trimestriels, analyses méthodologiques, ouvertures Académie. Désinscription 1 clic.</p>
+                                                <form id="newsletterSignup" autocomplete="off">
+                                                    <input type="hidden" name="newsletterSignupSubmit" id="newsletterSignupSubmit" value="newsletterSignupSubmit" />
+                                                    <div class="errmsg text-center hide"></div>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="email" class="form-control" name="email" autocomplete="email" placeholder="votre.email@organisation.cd" value="" />
+                                                        </div>
+                                                    </div>
+                                                    <button id="btn-news-signup" class="btn btn-eforas" type="submit"><span>S'INSCRIRE</span></button>
+                                                </form>
                                             </div>
+
+                                            <!-- Mini-stats EFORAS (remplace l'ISP badge) -->
+                                            <ul class="ef-mm-stats">
+                                                <li><strong>100%</strong><span>Emplois RDC</span></li>
+                                                <li><strong>40%</strong><span>Femmes min.</span></li>
+                                                <li><strong>15%</strong><span>Bourses Académie</span></li>
+                                            </ul>
                                         </div>
 
                                     </li>
@@ -2631,7 +2665,7 @@
     <link rel="stylesheet" type="text/css" href="/css/eforas/site.master.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/eforas/hero.css" />
 <link rel="stylesheet" type="text/css" href="/css/eforas/sweetalert2.min.css" />
-<link rel="stylesheet" href="/css/eforas-overrides.css?last=1">
+<link rel="stylesheet" href="/css/eforas-overrides.css?v=2">
 <script src="/js/jquery-1.12.0.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
