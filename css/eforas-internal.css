@@ -8,7 +8,11 @@ body.ef-internal {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 
-body.ef-internal .ax-content { margin-top: 0; }
+body.ef-internal .ax-content,
+body.ef-internal .container-fluid.content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
 
 /* Section hero plein navy avec titre énorme italique */
 .ef-section-intro {
@@ -41,10 +45,13 @@ body.ef-internal .ax-content { margin-top: 0; }
   padding: 0 20px;
 }
 
-/* Sections alternées texte/image */
-body.ef-internal section {
+/* Sections alternées texte/image — uniquement sections ef-section-* */
+body.ef-internal section[class^="ef-section-"],
+body.ef-internal section[class*=" ef-section-"] {
   padding: 64px 0;
 }
+/* Le hero intro gère son propre padding */
+body.ef-internal section.ef-section-intro { padding: 0; }
 body.ef-internal .ef-section-alt {
   background: #F4F6FA;
 }
@@ -151,6 +158,6 @@ body.ef-internal .center-block { margin-left: auto; margin-right: auto; }
     flex: 1 1 100%;
     width: 100%;
   }
-  body.ef-internal section { padding: 40px 0; }
+  body.ef-internal section[class^="ef-section-"] { padding: 40px 0; }
   .ef-section-intro { height: auto; min-height: 320px; padding: 60px 16px; }
 }
