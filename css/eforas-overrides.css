@@ -232,6 +232,25 @@ body .navbar {
 }
 
 /* ============================================================
+   10. CARET dropdown indicator (remplace fa-angle-down qui ne
+       se rendait pas correctement)
+   ============================================================ */
+.ef-caret {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: .7em;
+  vertical-align: middle;
+  opacity: .85;
+  transition: transform .18s ease, opacity .18s ease;
+}
+a:hover > .ef-caret,
+.dropdown-toggle:hover .ef-caret,
+.open .ef-caret {
+  opacity: 1;
+  transform: translateY(1px);
+}
+
+/* ============================================================
    6. PRELOADER : forcer la disparition du pacediv Axxess
    (le JS animait un slide-left qui restait coincé sans finalisation)
    ============================================================ */
