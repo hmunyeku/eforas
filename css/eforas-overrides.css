@@ -169,3 +169,17 @@ html, body, #sudo { height: 100% !important; overflow: hidden !important; }
   opacity: .5;
 }
 #minicart-link[title] { pointer-events: auto; }
+
+/* ============================================================
+   8. ICONS Axxess : forcer visibility:visible (le hack JS axxess
+      attendait la classe .font-axxess-loaded mais on a substitué
+      en .font-eforas-loaded ; on bypass via visibility forcé)
+   ============================================================ */
+[class^="icon-"],
+[class*=" icon-"] {
+  visibility: visible !important;
+}
+
+/* Forcer la classe sur html/body pour activer la cascade */
+html, body { /* placeholder */ }
+
