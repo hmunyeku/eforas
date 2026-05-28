@@ -1,233 +1,147 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>À propos d'EFORAS — Mission, valeurs, équipe</title>
-    <meta name="description" content="EFORAS est un cabinet congolais indépendant basé à Kinshasa, dédié à la production de connaissance vérifiable. Découvrez notre mission, nos valeurs et notre approche." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="css/eforas/ini.css">
-    <link rel="stylesheet" href="css/eforas-page-overrides.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="EFORAS — Accueil">
-        <span class="brand-mark" aria-hidden="true">EF</span>
-        <span class="brand-text"><strong>EFORAS</strong><em>Cabinet d'études &amp; data — RDC</em></span>
-      </a>
-      <nav class="desktop-nav" aria-label="Navigation principale">
-        <button class="nav-item" type="button" data-menu-trigger="services">Services</button>
-        <a class="nav-item" href="a-propos.html">À propos</a>
-        <button class="nav-item" type="button" data-menu-trigger="institutional">Institutionnel</button>
-        <a class="nav-item" href="etudes.html">Études</a>
-        <a class="nav-item" href="academie.html">Académie</a>
-        <a class="nav-item" href="blog.html">Blog</a>
-        <a class="nav-item" href="contact.html">Contact</a>
-      </nav>
-      <div class="header-actions"><a class="header-cta" href="contact.html">Demander un devis</a></div>
-      <button class="mobile-menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=1, viewport-fit=contain" />
+  <title>À propos d'EFORAS — Mission, valeurs, équipe</title>
+  <meta name="description" content="EFORAS est un cabinet congolais indépendant basé à Kinshasa, dédié à la production de connaissance vérifiable. Mission, valeurs, approche et gouvernance." />
+  <meta name="theme-color" content="#1F3864" />
+  <link rel="stylesheet" href="css/eforas/ini.css" />
+  <link rel="stylesheet" href="css/eforas/site.master.min.css" />
+  <link rel="stylesheet" href="css/eforas/hero.css" />
+  <link rel="stylesheet" href="css/eforas-overrides.css" />
+  <link rel="stylesheet" href="css/eforas-page-overrides.css" />
+  <link rel="stylesheet" href="css/eforas-about.css" />
+</head>
+<body id="aboutus" class="ef-page font-eforas-loaded">
 
-    <main>
-      <section class="page-hero is-institutional">
-        <div class="page-hero-inner">
-          <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span aria-hidden="true">/</span> À propos</nav>
-          <h1>À propos d'EFORAS</h1>
-          <p class="lead">Cabinet congolais indépendant basé à Kinshasa, dédié à la production de connaissance vérifiable.</p>
-        </div>
-      </section>
+<div id="sudo">
 
-      <section class="page-content">
-        <div class="page-content-inner">
-          <h2>Mission</h2>
-          <p>EFORAS conçoit et délivre des services intégrant <strong>collecte de données, analyse statistique, intelligence artificielle et formation</strong>, pour aider ses clients à prendre des décisions fondées sur des faits vérifiables et reproductibles.</p>
-          <p>Nous opérons en République Démocratique du Congo, depuis Kinshasa, avec une vocation à servir progressivement l'Afrique centrale et les institutions internationales actives sur la région.</p>
+  <!-- HEADER + NOTICE (injectés par eforas-chrome.js) -->
+  <div data-ef-header></div>
 
-          <h2>Vision</h2>
-          <p>Devenir la <strong>référence indépendante en Afrique centrale</strong> pour les études, les sondages d'opinion, la science des données et la formation aux métiers du chiffre, en combinant rigueur méthodologique, expertise technique avancée et ancrage local fort.</p>
+  <div class="container-fluid content" style="position:relative; background:#fff;">
+    <div class="ax-content">
 
-          <h2>Pourquoi EFORAS</h2>
-          <h3>Un cabinet d'études RDC qui assume une exigence méthodologique élevée</h3>
-          <p>Le marché des études, sondages et data en RDC compte des acteurs sérieux et reconnus. Notre conviction est qu'il y a place pour un <strong>acteur supplémentaire structuré autour de trois exigences explicites</strong>&nbsp;: méthodologie publique et auditée, expertise data avancée, ancrage local sincère.</p>
-
-          <div class="pillar-grid">
-            <article class="pillar">
-              <span class="pillar-icon" aria-hidden="true">🛡</span>
-              <h3>Méthodologie publique</h3>
-              <p>Méthodologies publiées. Sondages politiques validés par un Comité scientifique externe. Audit méthodologique annuel public.</p>
-            </article>
-            <article class="pillar">
-              <span class="pillar-icon" aria-hidden="true">⚙️</span>
-              <h3>Expertise data avancée</h3>
-              <p>Standards internationaux d'enquête, outils data (Python, R, SQL, MLOps), écosystèmes santé publique (DHIS2), cas d'usage IA appliqués.</p>
-            </article>
-            <article class="pillar">
-              <span class="pillar-icon" aria-hidden="true">🇨🇩</span>
-              <h3>Ancrage local sincère</h3>
-              <p>Droit congolais, basé à Kinshasa, profils RDC formés localement, langues nationales, données conservées en RDC quand demandé.</p>
-            </article>
+      <!-- Section 1 : Intro plein navy (style Axxess "Explore the Internet, your way") -->
+      <section id="section-about-intro" style="background-color: var(--eforas-navy);">
+        <div class="v-wrap">
+          <div class="v-box">
+            Cabinet d'études<br>
+            sondages &amp; data
           </div>
         </div>
       </section>
 
-      <section class="page-content section-alt">
-        <div class="page-content-inner">
-          <h2 style="margin-top:0;">Nos valeurs</h2>
-          <div class="card-grid">
-            <article class="card"><h3>Rigueur</h3><p>Le travail bien fait est un engagement pris envers nos clients, nos commanditaires, et le public quand nos travaux sont publiés.</p></article>
-            <article class="card"><h3>Indépendance</h3><p>Notre indépendance méthodologique est protégée par une <a href="charte-independance.html">Charte signée et opposable</a>, validée par un Comité scientifique externe, et soumise à un audit annuel public.</p></article>
-            <article class="card"><h3>Honnêteté</h3><p>Nous publions les limites de nos travaux, les marges d'erreur, les incertitudes. Nous refusons les promesses que nous ne pouvons pas tenir.</p></article>
-            <article class="card"><h3>Ancrage</h3><p>La production de connaissance sur la RDC gagne à être faite, autant que possible, <strong>depuis</strong> la RDC, <strong>par</strong> des équipes RDC, <strong>avec</strong> des partenariats locaux solides.</p></article>
-            <article class="card"><h3>Transfert</h3><p>Chaque mission peut inclure un volet de transfert de compétences vers les équipes du client. Nous formons, nous documentons, nous accompagnons.</p></article>
+      <!-- Section 2 : Backstory (texte gauche + image droite) -->
+      <section id="section-about-backstory">
+        <div class="container">
+          <div class="col-sm-6">
+            <div class="sidecontent">
+              <h4>EFORAS est un <span class="bold">cabinet congolais de droit privé</span> fondé à Kinshasa, dédié à la production de connaissance vérifiable&nbsp;: études stratégiques, sondages d'opinion, machine learning appliqué et formation.</h4>
+              <p class="pheader">
+              <h4>Notre conviction&nbsp;: les décisions publiques et privées en RDC gagnent à être fondées sur des <span class="bold">faits mesurés, méthodologies publiques et données reproductibles</span> — pas sur des intuitions ou des analyses opaques.</h4>
+              <p class="pheader">
+              <h4>Nous opérons depuis Kinshasa, employons des profils RDC formés localement, et délivrons en français, lingala, swahili, ciluba et kikongo.</h4>
+            </div>
+          </div>
+          <div class="col-sm-6 col-img">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" class="img-responsive" alt="Équipe EFORAS à Kinshasa" />
+            <div class="clearfix"></div>
           </div>
         </div>
       </section>
 
-      <section class="page-content">
-        <div class="page-content-inner">
-          <h2>Notre approche méthodologique</h2>
-          <h3>Cadrage rigoureux</h3>
-          <p>Chaque mission démarre par une note de cadrage écrite&nbsp;: problématique, hypothèses, méthodologie envisagée, livrables, calendrier, équipe. Validée par le client avant tout début d'exécution.</p>
-
-          <h3>Standards reconnus</h3>
-          <ul>
-            <li>Échantillonnage probabiliste documenté à chaque étape</li>
-            <li>Questionnaires testés en pilote avant déploiement</li>
-            <li>Formation initiale obligatoire des enquêteurs</li>
-            <li>Supervision terrain quotidienne, contrôles qualité aléatoires</li>
-            <li>Méthodologies alignées AAPOR, ESOMAR, OECD-DAC, ISO&nbsp;20252 selon le type de travail</li>
-          </ul>
-
-          <h3>Données et code reproductibles</h3>
-          <p>Nos analyses sont produites en code versionné (Git), accompagnées d'un manifeste d'environnement, livrées avec le fichier de données nettoyé.</p>
-
-          <h3>Pair-review interne et externe</h3>
-          <ul>
-            <li>Revue interne par un second analyste senior</li>
-            <li>Revue méthodologique externe pour les missions sensibles</li>
-            <li>Validation Comité scientifique pour les sondages politiques</li>
-          </ul>
-
-          <h3>Restitution structurée</h3>
-          <ul>
-            <li>Rapport méthodologique complet</li>
-            <li>Synthèse exécutive</li>
-            <li>Présentation orale</li>
-            <li>Fichier de données fourni au client</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="page-content section-alt">
-        <div class="page-content-inner">
-          <h2 style="margin-top:0;">Notre engagement d'impact</h2>
-          <p>Au-delà de la qualité commerciale, EFORAS s'engage publiquement sur plusieurs dimensions d'impact.</p>
-
-          <div class="card-grid">
-            <article class="card">
-              <h3>Bien public démocratique</h3>
-              <p>Publication trimestrielle d'un <strong>Baromètre démocratique RDC</strong> dont la synthèse 4 pages est gratuite et publique.</p>
-              <a class="card-link" href="etudes.html">Voir les études</a>
-            </article>
-            <article class="card">
-              <h3>Renforcement de capacités</h3>
-              <p>Académie EFORAS&nbsp;: formations courtes, longues certifiantes et intra-entreprise. Une part des places réservée à des bourses gratuites.</p>
-              <a class="card-link" href="academie.html">Voir l'Académie</a>
-            </article>
-            <article class="card">
-              <h3>Emplois qualifiés en RDC</h3>
-              <p>EFORAS emploie directement des profils techniques rares en RDC et contribue à freiner la fuite des cerveaux.</p>
-            </article>
-            <article class="card">
-              <h3>Inclusion et diversité</h3>
-              <p>Au moins <strong>40&nbsp;% de femmes</strong> et au moins <strong>50&nbsp;% de jeunes de moins de 30 ans</strong> dans notre effectif total.</p>
-            </article>
+      <!-- Section 3 : Mission (image gauche + highlight gold droite) -->
+      <section id="section-mission">
+        <div class="container">
+          <div class="col-sm-6">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" class="img-responsive center-block" alt="Analyse de données" />
           </div>
-
-          <h3>Alignement Objectifs de Développement Durable</h3>
-          <p>EFORAS contribue à 6 ODD&nbsp;: 3 (Santé), 4 (Éducation), 8 (Travail décent), 9 (Innovation), 16 (Institutions efficaces), 17 (Partenariats). EFORAS publie chaque année un <strong>rapport d'impact ouvert</strong> selon le standard IRIS+ du GIIN, avec audit externe.</p>
-        </div>
-      </section>
-
-      <section class="page-content">
-        <div class="page-content-inner">
-          <h2>Gouvernance</h2>
-          <h3>Direction</h3>
-          <p>EFORAS est dirigée par une direction générale congolaise basée à Kinshasa. La direction est appuyée par les Leads opérationnels de chaque activité.</p>
-
-          <h3>Comité scientifique externe</h3>
-          <p>EFORAS s'est dotée d'un <strong>Comité scientifique externe de 7 membres indépendants</strong>, qui valide la méthodologie de chaque sondage politique avant publication et conduit l'audit méthodologique annuel.</p>
-          <p><a href="comite-scientifique.html">Voir le Comité scientifique →</a></p>
-
-          <h3>Audit externe</h3>
-          <p>Audit comptable annuel certifié par un cabinet réputé. Audit méthodologique annuel public par cabinet tiers spécialisé.</p>
-
-          <h2>Partenariats</h2>
-          <ul>
-            <li><strong>Monde académique RDC</strong> — formations conjointes, recrutement de stagiaires, recherche appliquée (ESPK, UniKin, INRB)</li>
-            <li><strong>Récipients Principaux</strong> des grands programmes santé pour les sous-traitances analytiques</li>
-            <li><strong>Médias indépendants</strong> pour la diffusion des baromètres et études</li>
-            <li><strong>Écosystème open source</strong> (DHIS2, OpenDataKit, MLflow, communautés data)</li>
-          </ul>
-
-          <h2>Conformité</h2>
-          <p>EFORAS est une <strong>SARL de droit congolais</strong> basée à Kinshasa, inscrite au RCCM, disposant d'un ID-NAT et d'un NIF, affiliée à l'INSS et à l'INPP. EFORAS engage les démarches de référencement auprès des grands bailleurs internationaux (Nations Unies, USAID, Union Européenne, Banque Mondiale, BAD).</p>
-          <div class="callout">
-            <p><strong>Pour les bailleurs</strong>&nbsp;: un dossier de qualification complet est disponible sur demande à <a href="mailto:contact@eforas.cd">contact@eforas.cd</a>.</p>
+          <div class="col-sm-6 col-txt">
+            <h3>Notre mission&nbsp;: aider les organisations à <span class="bold">décider sur la base de faits vérifiables.</span> Études, sondages, IA, formation — combinées en une seule maison.</h3>
           </div>
         </div>
       </section>
 
-      <section class="page-content section-alt">
-        <div class="page-content-inner">
-          <h2 style="margin-top:0;">Une direction ancrée localement</h2>
-          <p style="max-width:780px;margin:0 auto;text-align:center;font-size:1.05rem;line-height:1.65;">EFORAS est portée par une direction <strong>congolaise basée à Kinshasa</strong>, avec une expérience confirmée dans le pilotage de projets complexes (multi-contractants, conformité aux standards internationaux, rigueur documentaire) et une maîtrise pratique des technologies data modernes (Python, FastAPI, déploiement cloud, MLOps).</p>
-          <p style="max-width:780px;margin:14px auto 0;text-align:center;color:var(--eforas-text-muted);">L'entreprise est de droit congolais, opère depuis Kinshasa, emploie ses équipes sur le sol RDC.</p>
-          <p style="text-align:center;margin-top:24px;"><a class="btn btn-outline" href="equipe.html">Voir l'équipe et la gouvernance</a></p>
-        </div>
-      </section>
-
-      <section class="cta-band">
-        <h2>Découvrir nos services</h2>
-        <p>EFORAS combine cabinet d'études, sondages, ML/IA, Académie, Tech et Location. Explorez nos activités ou prenez contact.</p>
-        <div class="cta-band-actions">
-          <a class="btn btn-primary btn-lg" href="contact.html">Demander un brief</a>
-          <a class="btn btn-outline-white btn-lg" href="index.html#top">Voir les activités</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-grid">
-        <div class="footer-block">
-          <div class="footer-brand"><span class="brand-mark" aria-hidden="true">EF</span><strong>EFORAS</strong></div>
-          <p>Cabinet d'études, sondages et data — Kinshasa, RDC. Méthodologie auditée, expertise locale, livrables vérifiables.</p>
-          <address>EFORAS SARL<br>Kinshasa, République Démocratique du Congo<br><a href="mailto:contact@eforas.cd">contact@eforas.cd</a></address>
-          <div class="footer-socials">
-            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.78v2.18h.07c.67-1.27 2.3-2.6 4.74-2.6 5.07 0 6 3.34 6 7.68V24h-5v-7.43c0-1.77-.03-4.05-2.47-4.05-2.47 0-2.85 1.93-2.85 3.93V24h-5V8z"/></svg></a>
-            <a href="#" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-.607z"/></svg></a>
+      <!-- Section 4 : Vision (image+texte alterné) -->
+      <section id="section-vision">
+        <div class="container">
+          <div class="col-sm-5 col-img">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" class="img-responsive" alt="Formation EFORAS Académie" />
+            <div class="clearfix"></div>
+          </div>
+          <div class="col-sm-7">
+            <div class="sidecontent">
+              <h4><span class="bold">Devenir la référence indépendante en Afrique centrale</span> pour les études, les sondages d'opinion, la science des données et la formation aux métiers du chiffre, en combinant rigueur méthodologique, expertise technique avancée et ancrage local fort.</h4>
+            </div>
           </div>
         </div>
-        <div class="footer-block"><h4>Services</h4><ul><li><a href="cabinet-etudes.html">Cabinet d'études</a></li><li><a href="sondages.html">Sondages d'opinion</a></li><li><a href="academie.html">Académie EFORAS</a></li><li><a href="ml-ia.html">ML / IA appliquée</a></li><li><a href="eforas-tech.html">EFORAS Tech</a></li><li><a href="location.html">Location</a></li></ul></div>
-        <div class="footer-block"><h4>Institutionnel</h4><ul><li><a href="a-propos.html">À propos</a></li><li><a href="charte-independance.html">Charte d'indépendance</a></li><li><a href="comite-scientifique.html">Comité scientifique</a></li><li><a href="equipe.html">Équipe &amp; valeurs</a></li><li><a href="etudes.html">Études publiées</a></li><li><a href="blog.html">Blog</a></li></ul></div>
-        <div class="footer-block"><h4>Contact</h4><ul><li><a href="contact.html">Formulaire qualifié</a></li><li><a href="contact.html?type=carrieres">Carrières</a></li><li><a href="contact.html?type=candidature-comite">Comité scientifique</a></li><li><a href="contact.html?type=saisine">Saisir le Comité</a></li><li><a href="contact.html?type=presse">Presse</a></li><li><a href="contact.html?type=partenariat">Partenariats</a></li></ul></div>
-        <div class="footer-block footer-newsletter">
-          <h4>Newsletter « Insights EFORAS »</h4>
-          <p>Recevez les baromètres trimestriels et nos analyses méthodologiques.</p>
-          <form><input type="email" name="email" placeholder="votre.email@organisation.cd" required /><button type="submit">S'inscrire</button><small>Pas de publicité externe. Désinscription en 1 clic.</small></form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <small>© <span data-current-year>2026</span> EFORAS SARL — Kinshasa, RDC. Tous droits réservés.</small>
-        <nav aria-label="Liens légaux"><a href="mentions-legales.html">Mentions légales</a><button class="legal-link" type="button" data-privacy-open>Politique de confidentialité</button><a href="charte-independance.html">Charte d'indépendance</a></nav>
-      </div>
-    </footer>
+      </section>
 
-    <script src="js/eforas-chrome.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+      <!-- Section 5 : Engagements (texte highlight + image) -->
+      <section id="section-engagements">
+        <div class="container">
+          <div class="col-sm-6 col-txt">
+            <h3>Trois engagements opposables&nbsp;: méthodologie publique, <span class="bold">Comité scientifique externe</span> qui valide chaque sondage politique, et audit annuel public par cabinet tiers.</h3>
+          </div>
+          <div class="col-sm-6">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" class="img-responsive center-block" alt="Charte d'indépendance" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6 : HQ Kinshasa (texte centré) -->
+      <section id="section-about-hq">
+        <div class="container">
+          <h4 class="text-center">En 2026, EFORAS s'installe à Kinshasa et structure son équipe&nbsp;: direction générale congolaise, Leads opérationnels par activité (Sondages, Santé/DHIS2, Data Science/ML, Académie, Plateforme technologique). 100&nbsp;% des emplois directs basés en RDC, avec un engagement de 40&nbsp;% de femmes minimum et 50&nbsp;% de jeunes &lt;30 ans.</h4>
+        </div>
+      </section>
+
+      <!-- Section 7 : Comité scientifique (3+9 cols) -->
+      <section id="section-comite">
+        <div class="container">
+          <div class="col-sm-3 col-img">
+            <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=600&q=80" class="img-responsive center-block" alt="Comité scientifique" />
+          </div>
+          <div class="col-sm-9 col-txt">
+            <h4>EFORAS s'est dotée d'un <span class="bold">Comité scientifique externe de 7 membres indépendants</span> — statisticien, épidémiologiste, juriste droits humains, économiste, sociologue, spécialiste DHIS2 et spécialiste data privée — qui valide chaque sondage politique avant publication et conduit l'audit méthodologique annuel public.</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 8 : ODD impact (3+9 cols) -->
+      <section id="section-odd">
+        <div class="container">
+          <div class="col-sm-3 col-img">
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80" class="img-responsive center-block" alt="Impact ODD" />
+          </div>
+          <div class="col-sm-9 col-txt">
+            <h4>Aligné sur les <span class="bold">Objectifs de Développement Durable</span> de l'ONU — ODD 3 (Santé), 4 (Éducation), 8 (Travail décent), 9 (Innovation), 16 (Institutions efficaces), 17 (Partenariats). Rapport d'impact annuel public selon standard IRIS+ du GIIN.</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 9 : CTA -->
+      <section id="section-cta" style="background-color: var(--eforas-navy); padding: 56px 16px; text-align: center;">
+        <div class="container">
+          <h2 style="color:#fff;font-family:Montserrat,Roboto,sans-serif;font-style:italic;font-weight:900;font-size:clamp(1.8rem,3vw,2.6rem);margin:0 0 14px;">Prêt à engager EFORAS&nbsp;?</h2>
+          <p style="max-width:680px;margin:0 auto 22px;color:rgba(255,255,255,.92);font-size:1.1rem;">Décrivez votre besoin via notre formulaire qualifié. Premier échange sous <strong style="color:#fff;">48 heures ouvrées</strong>.</p>
+          <a class="btn btn-primary btn-lg" href="contact.html" style="display:inline-flex;align-items:center;padding:14px 28px;border-radius:10px;background:var(--eforas-gold);color:var(--eforas-navy);font-weight:700;text-decoration:none;margin-right:8px;">Demander un brief</a>
+          <a class="btn btn-outline-white btn-lg" href="charte-independance.html" style="display:inline-flex;align-items:center;padding:14px 28px;border-radius:10px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.75);font-weight:700;text-decoration:none;">Lire la Charte d'indépendance</a>
+        </div>
+      </section>
+
+    </div><!-- /.ax-content -->
+  </div><!-- /.content -->
+
+  <!-- FOOTER (injecté par eforas-chrome.js) -->
+  <div data-ef-footer></div>
+
+</div><!-- /#sudo -->
+
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/eforas-chrome.js"></script>
+</body>
 </html>
