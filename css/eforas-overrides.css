@@ -1,0 +1,359 @@
+/* ============================================================
+   EFORAS OVERRIDES sur la base Axxess
+   Adapte la palette cyan d'Axxess vers la palette EFORAS navy/teal/gold
+   Garde toute la mécanique HTML/CSS Axxess (grille immersive, tuiles)
+   ============================================================ */
+
+:root {
+  --eforas-navy:        #1F3864;
+  --eforas-navy-dark:   #142847;
+  --eforas-navy-light:  #2A4A7F;
+  --eforas-teal:        #00A6A6;
+  --eforas-teal-dark:   #008080;
+  --eforas-gold:        #D4A017;
+  --eforas-gold-dark:   #A87E11;
+  --eforas-gold-light:  #E8B92A;
+  --white:              #FFFFFF;
+}
+
+/* Background body : cyan #0C81BB Axxess remplacé par navy EFORAS */
+body { background-color: var(--eforas-navy); }
+.content { background-color: var(--eforas-navy); }
+body .navbar { background-color: var(--eforas-navy); }
+.megamenu { background-color: var(--eforas-navy-light); }
+
+/* Brand EFORAS : remplace le logo SVG Axxess par un texte stylisé */
+#logodiv { line-height: 72px; }
+.brand-eforas {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 72px;
+  padding: 0 14px;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+.brand-eforas .brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--eforas-teal), var(--eforas-gold));
+  color: var(--eforas-navy);
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: -.02em;
+  box-shadow: 0 4px 12px rgba(0,0,0,.35), inset 0 0 0 2px rgba(255,255,255,.18);
+}
+.brand-eforas .brand-text {
+  display: grid;
+  line-height: 1.05;
+}
+.brand-eforas .brand-text strong {
+  color: #fff;
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.brand-eforas .brand-text em {
+  color: rgba(255,255,255,.78);
+  font-size: .72rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+
+/* Navbar nav links: garder le blanc Axxess */
+.navbar-nav > li > a { padding: 0 14px !important; line-height: 72px; }
+.navbar-nav > li > a:hover { background: var(--eforas-navy-dark); }
+
+/* CTA primaire EFORAS gold à droite */
+.ef-cta {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  margin: 14px 0;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--eforas-gold);
+  color: var(--eforas-navy);
+  font-weight: 700;
+  text-decoration: none;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: .92rem;
+  transition: background .18s ease, transform .18s ease;
+}
+.ef-cta:hover {
+  background: var(--eforas-gold-dark);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   MAPPING IDs Axxess → activités EFORAS (couleurs adaptées)
+   #hosting → Cabinet d'études (navy)
+   #homeinternet → Sondages (teal)
+   #fibre → Académie (gold)
+   #mobiledata → ML/IA (navy dark)
+   #voice → EFORAS Tech (teal dark)
+   #shop → Location (gold dark)
+   ============================================================ */
+
+/* #hosting → Cabinet d'études : navy */
+#hosting .hero-container .imager {
+  background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80') !important;
+  background-position: center center !important;
+}
+#hosting .hero-container .imager::before {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(31, 56, 100, .58);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* #homeinternet → Sondages : teal */
+#homeinternet .hero-container .imager {
+  background-image: url('https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1600&q=80') !important;
+  background-position: center center !important;
+}
+#homeinternet .hero-container .imager::before {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(0, 166, 166, .58);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* #fibre → Académie : gold */
+#fibre .hero-container .imager {
+  background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80') !important;
+  background-position: center top !important;
+}
+#fibre .hero-container .imager::before {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(212, 160, 23, .58);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* #mobiledata → ML/IA : navy dark */
+#mobiledata .hero-container .imager {
+  background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=80') !important;
+  background-position: center center !important;
+}
+#mobiledata .hero-container .imager::before {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(20, 40, 71, .65);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* #voice → EFORAS Tech : teal dark */
+#voice .hero-container .imager {
+  background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80') !important;
+  background-position: center center !important;
+}
+#voice .hero-container .imager::before {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(0, 128, 128, .60);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* #shop → Location : gold dark */
+#shop .hero-container .imager {
+  background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80') !important;
+  background-position: center center !important;
+}
+#shop .hero-container .imager::before {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(168, 126, 17, .58);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Le label "product-intro" reste Montserrat italic 800 blanc (Axxess) */
+.product-intro div {
+  color: rgba(255, 255, 255, .92) !important;
+}
+
+/* Notice bar EFORAS au-dessus de la grille */
+.ef-notice {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 36px;
+  min-height: 44px;
+  padding: 10px 24px;
+  background: var(--eforas-navy-dark);
+  color: #fff;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: .92rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.ef-notice a {
+  color: var(--eforas-gold-light);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ef-notice a:hover { opacity: .85; }
+
+/* Footer simple EFORAS sur fond navy dark */
+.ef-footer {
+  background: var(--eforas-navy-dark);
+  color: rgba(255,255,255,.78);
+  padding: 28px clamp(16px, 6vw, 64px) 18px;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: .84rem;
+}
+.ef-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr;
+  gap: 28px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.ef-footer-block h4 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.ef-footer-block ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.ef-footer-block a {
+  color: rgba(255,255,255,.78);
+  text-decoration: none;
+  transition: color .18s ease;
+}
+.ef-footer-block a:hover { color: var(--eforas-gold-light); }
+.ef-footer-bottom {
+  max-width: 1280px;
+  margin: 24px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: .78rem;
+  color: rgba(255,255,255,.58);
+}
+.ef-footer-bottom nav { display: inline-flex; gap: 4px 14px; flex-wrap: wrap; }
+.ef-footer-bottom nav a {
+  color: rgba(255,255,255,.68);
+  text-decoration: none;
+  transition: color .18s ease;
+}
+.ef-footer-bottom nav a:hover { color: var(--eforas-gold-light); }
+
+/* Grille 6 tuiles (Axxess col-md-2) en flex 100vh */
+html, body, #sudo { height: auto; overflow-y: auto; }
+.content {
+  display: flex;
+  flex-wrap: nowrap;
+  height: calc(100vh - 72px - 44px);
+  min-height: 540px;
+  padding: 0;
+}
+.content > .hero {
+  flex: 1 1 0;
+  height: 100%;
+  padding: 0 !important;
+}
+
+/* Reset Bootstrap col widths uses Axxess' own col-md-2 (6 columns) */
+@media (max-width: 1024px) {
+  .content {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .content > .hero {
+    flex: 1 1 50%;
+    height: 280px;
+    min-width: 280px;
+  }
+}
+@media (max-width: 640px) {
+  .content > .hero {
+    flex: 1 1 100%;
+    height: 200px;
+  }
+}
+
+/* Sections de contenu en dessous de la grille (piliers, ODD, CTA) */
+.ef-section {
+  padding: 56px clamp(16px, 5vw, 56px);
+  background: #fff;
+  color: #2d3748;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+.ef-section.alt { background: #F4F6FA; }
+.ef-section.dark {
+  background: linear-gradient(135deg, var(--eforas-navy), var(--eforas-teal-dark));
+  color: #fff;
+  text-align: center;
+}
+.ef-section .ef-inner { max-width: 1080px; margin: 0 auto; }
+.ef-section h2 {
+  margin: 0 0 14px;
+  font-family: "Montserrat", "Roboto", Arial, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  color: var(--eforas-navy);
+}
+.ef-section.dark h2 { color: #fff; }
+.ef-section p { line-height: 1.6; font-size: 1rem; }
+.ef-pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+.ef-pillar {
+  padding: 26px 22px;
+  background: #fff;
+  border: 1px solid #CBD5E0;
+  border-top: 4px solid var(--eforas-teal);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(31,56,100,.08);
+}
+.ef-pillar:nth-child(3n+2) { border-top-color: var(--eforas-gold); }
+.ef-pillar:nth-child(3n+3) { border-top-color: var(--eforas-navy); }
+.ef-pillar h3 { margin: 6px 0; color: var(--eforas-navy); font-size: 1.15rem; }
+.ef-pillar p { margin: 0; color: #4a5568; font-size: .95rem; }
+.ef-icon { font-size: 1.6rem; }
+.ef-cta-band-actions { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 14px; }
+.ef-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all .18s ease;
+}
+.ef-btn-primary { background: var(--eforas-gold); color: var(--eforas-navy); }
+.ef-btn-primary:hover { background: var(--eforas-gold-dark); color: #fff; }
+.ef-btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+.ef-btn-outline:hover { background: #fff; color: var(--eforas-navy); }
