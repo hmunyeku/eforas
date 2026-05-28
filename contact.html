@@ -1,197 +1,113 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact — EFORAS</title>
-    <meta name="description" content="Contactez EFORAS pour un devis d'étude, une inscription à l'Académie, un partenariat bailleur, une candidature au Comité scientifique, une candidature emploi ou une saisine. Réponse sous 48 h ouvrées." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="css/eforas/ini.css">
-    <link rel="stylesheet" href="css/eforas-page-overrides.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="EFORAS — Accueil"><span class="brand-mark" aria-hidden="true">EF</span><span class="brand-text"><strong>EFORAS</strong><em>Cabinet d'études &amp; data — RDC</em></span></a>
-      <nav class="desktop-nav" aria-label="Navigation principale">
-        <button class="nav-item" type="button" data-menu-trigger="services">Services</button>
-        <a class="nav-item" href="a-propos.html">À propos</a>
-        <button class="nav-item" type="button" data-menu-trigger="institutional">Institutionnel</button>
-        <a class="nav-item" href="etudes.html">Études</a>
-        <a class="nav-item" href="academie.html">Académie</a>
-        <a class="nav-item" href="blog.html">Blog</a>
-        <a class="nav-item" href="contact.html">Contact</a>
-      </nav>
-      <div class="header-actions"><a class="header-cta" href="#contact-form">Démarrer ma demande</a></div>
-      <button class="mobile-menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=1, viewport-fit=contain" />
+  <title>Contact — EFORAS</title>
+  <meta name="description" content="Contactez EFORAS pour un devis d'étude, une inscription à l'Académie, un partenariat bailleur, une candidature au Comité scientifique, une candidature emploi ou une saisine." />
+  <meta name="theme-color" content="#1F3864" />
+  <link rel="stylesheet" href="css/eforas/ini.css" />
+  <link rel="stylesheet" href="css/eforas/site.master.min.css" />
+  <link rel="stylesheet" href="css/eforas/hero.css" />
+  <link rel="stylesheet" href="css/eforas-overrides.css" />
+  <link rel="stylesheet" href="css/eforas-page-overrides.css" />
+  <link rel="stylesheet" href="css/eforas-internal.css" />
+</head>
+<body class="ef-page ef-internal font-eforas-loaded">
 
-    <main>
-      <section class="page-hero">
-        <div class="page-hero-inner">
-          <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span aria-hidden="true">/</span> Contact</nav>
-          <h1>Contact</h1>
-          <p class="lead">Engager EFORAS, postuler, vous abonner à un baromètre, ou saisir le Comité scientifique. Le formulaire ci-dessous oriente votre demande vers la bonne équipe. <strong>Réponse garantie sous 48 heures ouvrées</strong>.</p>
+<div id="sudo">
+  <div data-ef-header></div>
+
+  <div class="container-fluid content" style="position:relative; background:#fff;">
+    <div class="ax-content">
+
+      <section class="ef-section-intro" style="background-color: var(--eforas-navy);">
+        <div class="v-wrap">
+          <div class="v-box">Contact<br>EFORAS</div>
         </div>
       </section>
 
-      <section class="contact-shell">
-        <div class="contact-form-card">
-          <h2>Formulaire qualifié</h2>
-          <p style="color:var(--eforas-text-muted);font-size:0.95rem;margin-bottom:24px;">Choisissez le type de demande ci-dessous. Les champs s'adaptent automatiquement.</p>
-
-          <div class="contact-form-success" role="status" aria-live="polite">
-            ✅ Merci&nbsp;! Votre demande a bien été reçue. Nous vous répondrons dans les délais indiqués selon le type de demande.
-          </div>
-
-          <form class="contact-form" id="contact-form" novalidate>
-            <label class="required" for="contact-type"><span>Type de demande</span>
-              <select id="contact-type" name="type" required>
-                <option value="">— choisir —</option>
-              </select>
-            </label>
-
-            <div class="form-specific" aria-live="polite"></div>
-
-            <div style="border-top:1px solid var(--eforas-border);margin:24px 0 4px;padding-top:16px;">
-              <h3 style="margin:0 0 12px;font-size:1.05rem;color:var(--eforas-navy);">Vos coordonnées</h3>
+      
+      <section class="ef-section-alt">
+        <div class="container">
+          <div class="col-sm-6">
+            <div class="sidecontent">
+              <h4><span class="bold">Engager EFORAS</span>, postuler, vous abonner à un baromètre, ou saisir le Comité scientifique.</h4>
+              <p class="pheader">              <h4>Le formulaire qualifié oriente votre demande vers la bonne équipe. Réponse garantie sous <span class="bold">48 heures ouvrées</span>.</h4>
+              <p class="pheader">              <h4>18 types de demandes adaptifs : sondage, étude santé, ML/IA, étude B2B, Académie, abonnement baromètre, EFORAS Tech, location, candidature poste, saisine du Comité, etc.</h4>
+              <p class="pheader">
             </div>
-
-            <fieldset style="border:0;padding:0;margin:0;">
-              <legend style="font-weight:600;font-size:0.92rem;color:var(--eforas-navy);margin-bottom:6px;">Civilité <span style="color:var(--eforas-danger);">*</span></legend>
-              <div class="radio-group">
-                <label><input type="radio" name="civilite" value="M." required> M.</label>
-                <label><input type="radio" name="civilite" value="Mme"> Mme</label>
-                <label><input type="radio" name="civilite" value="Autre"> Autre</label>
-              </div>
-            </fieldset>
-
-            <div class="form-row">
-              <label class="required"><span>Nom complet</span><input type="text" name="nom" required autocomplete="name" /></label>
-              <label class="required"><span>Email professionnel</span><input type="email" name="email" required autocomplete="email" /></label>
-            </div>
-
-            <div class="form-row">
-              <label class="required"><span>Téléphone (avec indicatif)</span><input type="tel" name="telephone" placeholder="+243 ..." required autocomplete="tel" /></label>
-              <label><span>Organisation / Société</span><input type="text" name="organisation" autocomplete="organization" /></label>
-            </div>
-
-            <div class="form-row">
-              <label class="required"><span>Pays</span>
-                <select name="pays" required>
-                  <option value="RDC" selected>République Démocratique du Congo</option>
-                  <option value="CG">République du Congo</option>
-                  <option value="BE">Belgique</option>
-                  <option value="FR">France</option>
-                  <option value="CA">Canada</option>
-                  <option value="US">États-Unis</option>
-                  <option value="GB">Royaume-Uni</option>
-                  <option value="CH">Suisse</option>
-                  <option value="DE">Allemagne</option>
-                  <option value="autre">Autre</option>
-                </select>
-              </label>
-              <label class="required"><span>Ville</span><input type="text" name="ville" required /></label>
-            </div>
-
-            <label class="required"><span>Message libre (500–3000 caractères)</span><textarea name="message" rows="6" minlength="50" maxlength="3000" required placeholder="Décrivez votre besoin, vos contraintes, vos délais…"></textarea></label>
-
-            <label class="checkbox-row">
-              <input type="checkbox" name="rgpd" required />
-              <span>J'accepte que mes données soient traitées pour répondre à ma demande, conformément à la <a href="mentions-legales.html#confidentialite">politique de confidentialité</a> d'EFORAS. <span style="color:var(--eforas-danger);">*</span></span>
-            </label>
-
-            <div class="form-actions">
-              <button type="reset" class="btn btn-outline">Réinitialiser</button>
-              <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
-            </div>
-          </form>
-        </div>
-
-        <aside class="contact-info">
-          <div class="info-card">
-            <h3>📬 Adresse postale</h3>
-            <address>EFORAS SARL<br>Kinshasa<br>République Démocratique du Congo</address>
           </div>
-          <div class="info-card">
-            <h3>📞 Téléphone</h3>
-            <p>Numéro fixe et mobile à activer prochainement.<br><em style="color:var(--eforas-text-muted);">Privilégier l'email en attendant.</em></p>
-          </div>
-          <div class="info-card">
-            <h3>📧 Emails dédiés</h3>
-            <p>
-              <a href="mailto:contact@eforas.cd">contact@eforas.cd</a> — Demande générale<br>
-              <a href="mailto:commercial@eforas.cd">commercial@eforas.cd</a> — Devis<br>
-              <a href="mailto:academie@eforas.cd">academie@eforas.cd</a> — Académie<br>
-              <a href="mailto:carrieres@eforas.cd">carrieres@eforas.cd</a> — Carrières<br>
-              <a href="mailto:saisine@eforas.cd">saisine@eforas.cd</a> — Saisines<br>
-              <a href="mailto:presse@eforas.cd">presse@eforas.cd</a> — Presse<br>
-              <a href="mailto:partenariats@eforas.cd">partenariats@eforas.cd</a> — Partenariats
-            </p>
-          </div>
-          <div class="info-card">
-            <h3>🕐 Heures d'ouverture</h3>
-            <p>Lundi à vendredi&nbsp;: 8h – 17h (Kinshasa, UTC+1)<br>Samedi&nbsp;: 9h – 13h (sur RDV)<br>Dimanche / fériés&nbsp;: fermé</p>
-          </div>
-        </aside>
-      </section>
-
-      <section class="page-content section-alt">
-        <div class="page-content-inner">
-          <h2 style="margin-top:0;">Engagement de réponse</h2>
-          <div class="delay-list">
-            <div class="delay-item"><strong>Devis étude / sondage / ML-IA / B2B</strong><span>5 jours ouvrés (note de cadrage)</span></div>
-            <div class="delay-item"><strong>Inscription Académie</strong><span>3 jours ouvrés</span></div>
-            <div class="delay-item"><strong>EFORAS Tech / Location</strong><span>48 h ouvrées</span></div>
-            <div class="delay-item"><strong>Candidature poste</strong><span>14 jours ouvrés</span></div>
-            <div class="delay-item"><strong>Candidature Comité scientifique</strong><span>30 jours ouvrés</span></div>
-            <div class="delay-item"><strong>Saisine du Comité scientifique</strong><span>5 jours (AR) + 30 jours (décision)</span></div>
-            <div class="delay-item"><strong>Demande presse urgente</strong><span>24 h</span></div>
-            <div class="delay-item"><strong>Autres demandes</strong><span>48 h ouvrées</span></div>
+          <div class="col-sm-6 col-img">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" class="img-responsive" alt="Contact EFORAS" />
+            <div class="clearfix"></div>
           </div>
         </div>
       </section>
 
-      <section class="page-content">
-        <div class="page-content-inner">
-          <h2>Protection des données personnelles</h2>
-          <p>Les données que vous nous communiquez via ce formulaire sont&nbsp;:</p>
-          <ul>
-            <li><strong>Utilisées exclusivement</strong> pour traiter votre demande</li>
-            <li><strong>Conservées</strong> pendant la durée de la relation commerciale puis 5 ans (3 ans pour les candidatures non retenues, 30 jours pour les newsletters désabonnées)</li>
-            <li><strong>Hébergées en RDC ou en UE</strong> sur infrastructure sécurisée</li>
-            <li><strong>Non revendues ni partagées</strong> avec des tiers, sauf obligation légale</li>
-            <li><strong>Accessibles, modifiables, supprimables</strong> sur simple demande à <a href="mailto:donnees-personnelles@eforas.cd">donnees-personnelles@eforas.cd</a></li>
-          </ul>
-          <p><a href="mentions-legales.html#confidentialite">Lire la politique de confidentialité complète →</a></p>
+      <section class="ef-section-white">
+        <div class="container">
+          <div class="col-sm-6">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" class="img-responsive center-block" alt="Adresses email" />
+          </div>
+          <div class="col-sm-6 col-txt">
+            <h3><span class="bold">Emails dédiés</span> : contact, commercial, academie, tech, carrieres, comite-scientifique, saisine, abonnement, presse, partenariats — tous @eforas.cd</h3>
+          </div>
         </div>
       </section>
-    </main>
 
-    <footer class="site-footer">
-      <div class="footer-grid">
-        <div class="footer-block">
-          <div class="footer-brand"><span class="brand-mark" aria-hidden="true">EF</span><strong>EFORAS</strong></div>
-          <p>Cabinet d'études, sondages et data — Kinshasa, RDC.</p>
-          <address>EFORAS SARL<br>Kinshasa, RDC<br><a href="mailto:contact@eforas.cd">contact@eforas.cd</a></address>
+      <section class="ef-section-alt">
+        <div class="container">
+          <div class="col-sm-5 col-img">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" class="img-responsive" alt="Délais" />
+            <div class="clearfix"></div>
+          </div>
+          <div class="col-sm-7">
+            <div class="sidecontent">
+              <h4><span class="bold">Délais de réponse engagés</span> : Devis sous 5 jours ouvrés, Inscription Académie sous 3 jours, EFORAS Tech/Location 48h.</h4>
+              <p class="pheader">              <h4>Candidature poste 14 jours, Candidature Comité 30 jours, Saisine du Comité 5 jours (accusé) + 30 jours (décision).</h4>
+              <p class="pheader">              <h4>Demande presse urgente sous 24 heures.</h4>
+              <p class="pheader">
+            </div>
+          </div>
         </div>
-        <div class="footer-block"><h4>Services</h4><ul><li><a href="cabinet-etudes.html">Cabinet d'études</a></li><li><a href="sondages.html">Sondages d'opinion</a></li><li><a href="academie.html">Académie EFORAS</a></li><li><a href="ml-ia.html">ML / IA appliquée</a></li><li><a href="eforas-tech.html">EFORAS Tech</a></li><li><a href="location.html">Location</a></li></ul></div>
-        <div class="footer-block"><h4>Institutionnel</h4><ul><li><a href="a-propos.html">À propos</a></li><li><a href="charte-independance.html">Charte d'indépendance</a></li><li><a href="comite-scientifique.html">Comité scientifique</a></li><li><a href="equipe.html">Équipe</a></li><li><a href="etudes.html">Études publiées</a></li><li><a href="blog.html">Blog</a></li></ul></div>
-        <div class="footer-block"><h4>Contact</h4><ul><li><a href="contact.html">Formulaire</a></li><li><a href="contact.html?type=carrieres">Carrières</a></li><li><a href="contact.html?type=saisine">Saisir le Comité</a></li><li><a href="contact.html?type=presse">Presse</a></li><li><a href="contact.html?type=partenariat">Partenariats</a></li></ul></div>
-        <div class="footer-block footer-newsletter">
-          <h4>Newsletter</h4>
-          <p>Baromètres et analyses.</p>
-          <form><input type="email" name="email" placeholder="votre.email@organisation.cd" required /><button type="submit">S'inscrire</button><small>Désinscription en 1 clic.</small></form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <small>© <span data-current-year>2026</span> EFORAS SARL — Kinshasa, RDC.</small>
-        <nav aria-label="Liens légaux"><a href="mentions-legales.html">Mentions légales</a><button class="legal-link" type="button" data-privacy-open>Politique de confidentialité</button><a href="charte-independance.html">Charte</a></nav>
-      </div>
-    </footer>
+      </section>
 
-    <script src="js/eforas-chrome.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+      <section class="ef-section-white">
+        <div class="container">
+          <div class="col-sm-6">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" class="img-responsive center-block" alt="Bureaux" />
+          </div>
+          <div class="col-sm-6 col-txt">
+            <h3><span class="bold">Bureaux Kinshasa</span> : lundi-vendredi 8h-17h (UTC+1), samedi 9h-13h sur rendez-vous, fermé dimanche et fériés.</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="ef-section-highlight">
+        <div class="container">
+          <h4 class="text-center">Vos données sont utilisées exclusivement pour traiter votre demande. Non revendues. Hébergées RDC ou UE. Droits d'accès, rectification, effacement sur demande.</h4>
+        </div>
+      </section>
+
+
+      <section class="ef-section-cta" style="background-color: var(--eforas-navy); padding: 56px 16px; text-align: center;">
+        <div class="container" style="display:block;text-align:center;">
+          <h2 style="color:#fff;font-family:Montserrat,Roboto,sans-serif;font-style:italic;font-weight:900;font-size:clamp(1.8rem,3vw,2.6rem);margin:0 0 14px;">Démarrer votre demande</h2>
+          <p style="max-width:680px;margin:0 auto 22px;color:rgba(255,255,255,.92);font-size:1.1rem;">Formulaire qualifié avec 18 types de demandes adaptatifs.</p>
+          <a href="contact-form.html" style="display:inline-flex;align-items:center;padding:14px 28px;border-radius:10px;background:var(--eforas-gold);color:var(--eforas-navy);font-weight:700;text-decoration:none;margin-right:8px;">Formulaire de contact</a>
+          <a href="contact.html?type=saisine" style="display:inline-flex;align-items:center;padding:14px 28px;border-radius:10px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.75);font-weight:700;text-decoration:none;">Saisir le Comité</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div data-ef-footer></div>
+</div>
+
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/eforas-chrome.js"></script>
+</body>
 </html>
