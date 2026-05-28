@@ -1,5 +1,5 @@
 /* ============================================================
-   HEADER EFORAS
+   HEADER EFORAS — Style Axxess (fond navy plein, brand blanc)
    ============================================================ */
 .site-header {
   position: sticky;
@@ -9,38 +9,38 @@
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 28px;
-  height: 80px;
+  height: 84px;
   padding: 0 clamp(16px, 5vw, 56px);
-  background: var(--white);
-  border-bottom: 1px solid var(--eforas-border);
-  box-shadow: 0 1px 0 rgba(31, 56, 100, .04);
+  background: var(--eforas-navy);
+  border-bottom: 1px solid var(--eforas-navy-dark);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .18);
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   min-width: 0;
-  color: var(--eforas-navy);
+  color: var(--white);
 }
 
-.brand:hover { color: var(--eforas-teal); }
+.brand:hover { color: var(--eforas-gold-light); }
 
 .brand-mark {
   position: relative;
   display: grid;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   place-items: center;
   flex: 0 0 auto;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--eforas-navy), var(--eforas-teal));
-  color: var(--white);
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--eforas-teal), var(--eforas-gold));
+  color: var(--eforas-navy);
   font-family: var(--font-display);
   font-weight: 900;
   font-size: 1.05rem;
   letter-spacing: -0.02em;
-  box-shadow: 0 4px 12px rgba(31, 56, 100, .25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .35), inset 0 0 0 2px rgba(255, 255, 255, .18);
 }
 
 .brand-text {
@@ -49,30 +49,31 @@
 }
 
 .brand-text strong {
-  color: var(--eforas-navy);
+  color: var(--white);
   font-family: var(--font-display);
-  font-size: 1.55rem;
+  font-size: 1.6rem;
   font-weight: 900;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
 .brand-text em {
-  margin-top: 2px;
-  color: var(--eforas-text-muted);
+  margin-top: 3px;
+  color: rgba(255, 255, 255, .78);
   font-size: 0.78rem;
   font-style: normal;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
 
 /* ============================================================
-   NAVIGATION
+   NAVIGATION — texte blanc sur header navy
    ============================================================ */
 .desktop-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   font-size: 0.95rem;
   font-weight: 600;
 }
@@ -86,7 +87,7 @@
   padding: 0 14px;
   border: 0;
   border-radius: 8px;
-  color: var(--eforas-navy);
+  color: rgba(255, 255, 255, .92);
   background: transparent;
   cursor: pointer;
   text-decoration: none;
@@ -109,31 +110,31 @@
 .nav-item:hover,
 .nav-item:focus-visible,
 .nav-item.is-active {
-  color: var(--eforas-teal);
-  background: var(--eforas-bg-light);
+  color: var(--white);
+  background: var(--eforas-navy-dark);
 }
 
 .nav-item:focus-visible {
-  outline: 2px solid var(--eforas-teal);
+  outline: 2px solid var(--eforas-gold);
   outline-offset: 2px;
 }
 
 /* ============================================================
-   MEGA MENU
+   MEGA MENU — Axxess-style : fond navy plus clair plein écran
    ============================================================ */
 .mega-menu {
   position: absolute;
-  top: 80px;
+  top: 84px;
   left: 0;
   z-index: 35;
   display: none;
   width: 100vw;
   min-height: 360px;
   margin-left: calc(50% - 50vw);
-  padding: 36px clamp(24px, 8vw, 96px) 32px;
-  background: var(--white);
-  border-top: 1px solid var(--eforas-border);
-  box-shadow: 0 16px 40px rgba(31, 56, 100, .12);
+  padding: 36px clamp(24px, 8vw, 96px) 36px;
+  background: var(--eforas-navy-light);
+  border-top: 1px solid var(--eforas-navy-dark);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, .35);
 }
 
 .mega-menu.is-open {
@@ -255,7 +256,7 @@
   height: 44px;
   padding: 0;
   border: 0;
-  color: var(--eforas-navy);
+  color: var(--white);
   background: transparent;
   cursor: pointer;
 }
@@ -275,20 +276,21 @@
 .mobile-menu.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* ============================================================
-   NOTICE BAR
+   NOTICE BAR — Axxess-style : bleu sombre sous le header
    ============================================================ */
 .notice-bar {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 18px 32px;
-  min-height: 44px;
-  padding: 10px 24px;
-  background: linear-gradient(90deg, var(--eforas-navy), var(--eforas-navy-light));
+  gap: 18px 36px;
+  min-height: 48px;
+  padding: 12px 24px;
+  background: var(--eforas-navy-dark);
   color: var(--white);
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
 }
 
 .notice-bar p { margin: 0; display: inline-flex; align-items: center; gap: 8px; }

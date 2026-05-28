@@ -90,7 +90,7 @@
       title: "Équipe & valeurs",
       color: "#00A6A6",
       items: [
-        ["Le fondateur", "equipe.html"],
+        ["Direction", "equipe.html"],
         ["Notre équipe", "equipe.html"],
         ["Carrières", "contact.html?type=carrieres"]
       ]
