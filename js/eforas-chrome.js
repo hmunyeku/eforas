@@ -6,14 +6,12 @@
 (function () {
   "use strict";
 
+  // Nav identique à la home : 4 items courts pour cohérence visuelle Axxess
   var navItems = [
     { label: 'Services',     href: 'cabinet-etudes.html', caret: true },
     { label: 'Charte',       href: 'charte-independance.html', flame: true },
     { label: 'Institutionnel', href: 'a-propos.html', caret: true },
-    { label: 'Engagement',   href: 'etudes.html', dot: true },
-    { label: 'Académie',     href: 'academie.html' },
-    { label: 'Blog',         href: 'blog.html' },
-    { label: 'Contact',      href: 'contact.html' }
+    { label: 'Engagement',   href: 'etudes.html', dot: true }
   ];
 
   function buildNav() {

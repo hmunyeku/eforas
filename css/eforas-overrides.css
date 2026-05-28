@@ -269,11 +269,38 @@ html, body, #sudo { height: 100% !important; overflow: hidden !important; }
 /* ============================================================
    7. Boutons cart/signin : adapter à EFORAS
    ============================================================ */
-#minicart-link {
-  pointer-events: none;
-  opacity: .5;
+/* Cache Cart + Sign In Axxess (pas pertinents EFORAS) */
+#minicart-link, #signin-link, #signout-link,
+.pull-right #minicart-link, .pull-right #signin-link {
+  display: none !important;
 }
-#minicart-link[title] { pointer-events: auto; }
+
+/* CTA "Demander un devis" gold injecté à droite du navbar home */
+.navbar .navbar-nav,
+.navbar-default .navbar-nav { align-items: center; }
+.ef-home-cta {
+  display: inline-flex !important;
+  align-items: center;
+  height: 44px;
+  margin: 14px 10px 14px 14px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--eforas-gold);
+  color: var(--eforas-navy) !important;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: .92rem;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  transition: background .18s ease, transform .18s ease;
+  list-style: none;
+}
+.ef-home-cta:hover {
+  background: var(--eforas-gold-dark);
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+.ef-home-cta a { color: inherit !important; text-decoration: none !important; }
 
 /* ============================================================
    8. ICONS Axxess : forcer visibility:visible (le hack JS axxess
